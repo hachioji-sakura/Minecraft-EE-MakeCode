@@ -5,30 +5,30 @@
 ### @codeStop players set @s codeExecution 0
 
 
-# Python Islands 1 - Farming
+# Python Islands 1 - 農業
 
 ```template
 // Add your code below
 agent
 ```
 
-## Introduction to farming @showdialog
-Using our agent, let's help the farmer till the ground and plant some seeds. The farmer has already placed the seeds in the agent inventory, ready to go!   
+## 農業の紹介 @showdialog
+エージェントを使って、農夫が地面を耕し、種を植えるのを手伝いましょう。農夫はすでにエージェントのインベントリに種を入れてくれています！
 
 ![Farming](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/farm/farm.jpg)
 
-## Moving the agent into place
-The farmer has added 3 markers over the field to show you where to till the soil.
-Use `||agent:agent.move(DIRECTION, 1)||` to move your agent to one of the markers.   
-Remember to change the `1` above to the number of blocks you want to move.
+## エージェントを適切な位置に移動する
+農夫は畑の上に3つのマーカーを設置して、どこを耕すべきか示してくれています。
+`||agent:agent.move(DIRECTION, 1)||`を使って、エージェントをマーカーの1つまで移動させましょう。   
+上記の`1`を移動したいブロック数に変更することを忘れないでください。
 ```python
 agent.move(LEFT, 3)
 ```
 
 
-## Tilling the required spots 
-Tilling prepares normal dirt so you can grow seeds. Once you have your agent floating above a dirt block (using `||agent:agent.move(FORWARD)||`), you should till it.
-To till dirt using your agent, use `||agent:agent.till(DIRECTION)||`. 
+## 必要な場所を耕す
+耕すことで、通常の土を準備して種を育てられるようになります。エージェントを土ブロックの上に浮かせたら（`||agent:agent.move(FORWARD)||`を使用）、それを耕す必要があります。
+エージェントを使って土を耕すには、`||agent:agent.till(DIRECTION)||`を使用します。
 
 
 ```python
@@ -36,9 +36,9 @@ agent.move(LEFT, 3)
 agent.till(DOWN)
 ```
 
-## Planting seeds
-Now that the ground has been tilled, you should see the marker change to a white colour.  
-Next, you need to plant the seeds using `||agent:agent.place(DIRECTION)||`.
+## 種を植える
+地面が耕されたので、マーカーが白色に変わったのが見えるはずです。  
+次に、`||agent:agent.place(DIRECTION)||`を使って種を植える必要があります。
 
 
 ```python
@@ -47,7 +47,6 @@ agent.till(DOWN)
 agent.place(DOWN)
 ```
 
-## Plant the rest of the seeds
-Now you have planted a seed it's time to finish the job by planting the other 2 seeds. 
-Take a look for the markers placed by the farmer.  
-
+## 残りの種を植える
+種を1つ植えたので、残りの2つの種を植えて作業を完了させましょう。  
+農夫が設置したマーカーを探してみてください。
