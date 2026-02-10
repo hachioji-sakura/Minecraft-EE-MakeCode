@@ -4,20 +4,20 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Python Islands 1 - Forest 2
+# Python Islands 1 - 森 2
 
 ```template
 agent
 ```
 
-## Apple Picking @showdialog
-After investigating, you realise that Nicole is stuck at the top of the tree, with her bird called Marvin. He seems to be nesting at the top of the tree because he's hungry. Let's go and get him some apples!
+## リンゴを摘む @showdialog
+調査の結果、ニコルがマーヴィンという鳥と一緒に木のてっぺんに閉じ込められていることがわかりました。マーヴィンはお腹を空かせているため、木のてっぺんに巣を作っているようです。リンゴを取りに行きましょう！
 ![Cover Image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/forest/cover2.png)
-Go down the ladder and find your agent, then when you're ready to let's go and pick our first apple! 
+はしごを降りてエージェントを見つけ、準備ができたら最初のリンゴを摘みに行きましょう！
 
-## Get to an Apple
-To pick an apple, you first need to position your agent next to one of them. Remember your agent can go UP, DOWN, LEFT, RIGHT, FORWARD and BACK.
-Move your agent using `||agent:agent.move||` (and your whistle) to the first apple you want to pick!
+## リンゴまで移動する
+リンゴを摘むには、まずエージェントをリンゴの1つの隣に配置する必要があります。エージェントは上（UP）、下（DOWN）、左（LEFT）、右（RIGHT）、前（FORWARD）、後（BACK）に移動できることを覚えておいてください。
+`||agent:agent.move||`（とホイッスル）を使ってエージェントを移動させ、最初に摘みたいリンゴまで移動しましょう！
 
 
 ```python
@@ -25,20 +25,22 @@ agent.move(DIRECTION, BLOCKS)
 ```
 
 
-## Picking up an Apple @showdialog
-Make sure your agent is next to an apple. (Similar to the image below)
+## リンゴを拾う @showdialog
+エージェントがリンゴの隣にいることを確認してください。（下の画像と同様の位置）
 ![Agent position before picking apple](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/forest/agent_before_pick.png)
 
-## Picking up an Apple
-With your agent in front of an apple, you can use the `||agent:agent.destroy||` command to break a block in a certain direction.
+## リンゴを拾う
+エージェントがリンゴの前にいる状態で、`||agent:agent.destroy||`コマンドを使って特定の方向のブロックを壊すことができます。
 ```python
 
 agent.destroy(DIRECTION)
 
 ```
-- `DIRECTION`: The direction that your agent will try to break. The directions you can use are: FORWARD, BACK, LEFT, RIGHT, UP, DOWN.
+- `DIRECTION`とは、エージェントが壊そうとする方向のことです。
+
+使用できる方向は：前（FORWARD）、後ろ（BACK）、左（LEFT）、右（RIGHT）、上（UP）、下（DOWN）です。
 
 
-## Get the Rest
-Great! Now with the first apple gone, we still need to get 4 more.
-Now search around and pick four more then return to Nicole when you're finished.
+## 残りを取得する
+素晴らしい！最初のリンゴを取得しましたが、あと4つ必要です。
+周りを探して、あと4つ摘んでから、終わったらニコルのところに戻りましょう。

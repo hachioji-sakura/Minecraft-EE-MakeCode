@@ -9,15 +9,15 @@ player.say("Task Complete!")
 ```
 
 
-# Python Islands 1 - Forest 3
-Giving Nicole and Marvin the apples
+# Python Islands 1 - 森 3
+ニコルとマーヴィンにリンゴを渡す
 
-## Meeting Marvin and Nicole @showdialog
-Now that you have collected enough apples, Nicole gets Marvin back and active again! Nicole thanks you.
+## マーヴィンとニコルに会う @showdialog
+十分なリンゴを集めたのでニコルはマーヴィンを取り戻し、再び元気になりました！ニコルはあなたに感謝しています。
 ![Cover image of Nicole and Marvin](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/forest/cover3.png)
 
-## Task Complete
-Run the code below to complete the task!
+## タスク完了
+以下のコードを実行してタスクを完了させましょう！
 
 ```python
 player.say("Task Complete!")

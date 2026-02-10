@@ -9,45 +9,45 @@
 player.say("Hello world!")
 ```
 
-## Using the say() command @showdialog
+## say()コマンドの使用 @showdialog
 
-In this activity, we will be exploring the `||player:say()||` command in Python. The `||player:say()||` command is used to output a message to the chat, from you! 
+このアクティビティでは、Pythonの`||player:say()||`コマンドを深掘りします。`||player:say()||`コマンドは、チャットにメッセージを出力するために使用されます。
 
-Here's how it works. If you write:
+この通りにすると動きます。次のように書くと：
 
 `||player:player.say("Hello world!")||`
 
-The output would look like:
+出力は次のようになります：
 ![Say output](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/standalone/say1.jpg)
 
-## Try it Yourself
-Try the program below by pressing the Run button.    
-What else might you want to say, try tweaking the orange text sections within the " " and see what happens.
+## 自分で試してみる
+下のプログラムを実行ボタンを押して試してみてください。    
+他に何を言いたいですか？" "の中のオレンジ色のテキスト部分を調整して、何が起こるか見てみましょう。
 ```python
 player.say("Hello!")
 ```
 
-## Why do you need quotation marks? @showdialog
-As you can see we put quotation marks " " around the text within the say command.   
+## なぜ引用符が必要なのですか？ @showdialog
+見ての通り、sayコマンド内のテキストの周りに引用符の" "（ダブルクオーテーション）を付けています。   
 
-But why are these needed?...   
+しかし、なぜこれらが必要なのでしょうか...?
 
-This is because, in Python, any code that is meant to be text (also known as a String) is contained within quotation marks.
+これは、Pythonでは、テキスト（文字列とも呼ばれます）として扱われるコードは引用符で囲む必要があるためです。
 
 
-## What are some other types of data? @showdialog
+## 他のデータ型には何がありますか？ @showdialog
 
-Strings (text) are just one type of data within Python. There are a few other interesting **Datatypes**.   
-- Integers: Whole numbers, for example, 1, 5, -2
-- Floats: Decimal numbers, for example, 1.4, 5.7, -3.8
-- Booleans: True or False (they must include the capital T and F)
+文字列（テキスト）は、Python内のデータ型の1つに過ぎません。他にも興味深い**データ型**がいくつかあります。   
+- 整数：整数、例えば、1、5、-2
+- 浮動小数点数：小数、例えば、1.4、5.7、-3.8
+- ブール値：TrueまたはFalse（大文字のTとFを含める必要があります）
 
-The `||player:say()||` command supports outputting each of these, without the need for quotation marks.
+`||player:say()||`コマンドは、引用符なしでこれらのそれぞれを出力することをサポートしています。
 
-## Other types of data
-Try removing everything within the brackets of `||player:player.say||`, including the quotation marks, and putting a different datatype within the brackets.
+## 他のデータ型
+`||player:player.say||`のかっこ内のすべてを削除し、引用符を含めて、かっこ内に別のデータ型を入れてみてください。
 
-For example, an integer (5), a float (1.4), or a boolean (True)
+例えば、整数（5）、浮動小数点数（1.4）、またはブール値（True）を入れてみてください。
 
 ```diffpython
 player.say()
@@ -55,5 +55,5 @@ player.say()
 player.say(5)
 ```
 
-## Task complete
-Click *escape* to close the code editor and go and find the lesson on variables. 
+## タスク完了
+*esc*キーをクリックしてコードエディタを閉じ、変数に関するレッスンを見つけに行きましょう。

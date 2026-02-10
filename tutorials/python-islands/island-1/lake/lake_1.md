@@ -4,48 +4,48 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Python Islands 1 - Lake
+# Python Islands 1 - 湖
 
 ```template
 agent
 ```
 
-## Getting started with the Agent  @showdialog
+## エージェントの使い方  @showdialog
 
-In this task, it's time to learn how to move your Agent around!
+このタスクでは、エージェントを動かす方法を学びましょう！
 
 ![Image of Agent on a starting diamond block with their target in shot](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/lake/lake.jpg)
 
-## Python Programs recap
+## Pythonプログラムの復習
 
-Python programs are made up of one or more instructions, that the computer will execute one after another.
+Pythonプログラムは、1つ以上の命令で構成されており、コンピューターがそれらを順番に実行します。
 
-## Your Agent
+## あなたのエージェント
 
-Have a look around in the world. You should see your Agent, standing on the blue diamond block.
+ワールドを見回してみてください。青いダイヤモンドブロックの上に立っているエージェントが見えるはずです。
 
-This awesome little robot can move around the world, even fly!
+この素晴らしい小さなロボットは、ワールド内を移動でき、さらには飛ぶこともできます！
 
-Head to the next step and we'll start telling your agent to move.
+次のステップに進んで、エージェントに移動するよう指示を始めましょう。
 
-## Moving your agent
+## エージェントを動かす
 
-Move your agent with `||agent:agent.move(DIRECTION, DISTANCE)||`
+`||agent:agent.move(DIRECTION, DISTANCE)||`でエージェントを動かします
 
-**Try changing the `DIRECTION` placeholder to *FORWARD*, or perhaps another direction like *BACK* or *LEFT*?**   
-**What happens if you increase the `DISTANCE` to 2 or 3?**
+**`DIRECTION`プレースホルダーを*FORWARD*（前）に変更してみるか、*BACK*（後ろ）や*LEFT*（左）などの別の方向に変更してみてください。**   
+**`DISTANCE`を2や3に増やすとどうなるでしょうか？**
 
 ```python
 agent.move(FORWARD, 1)
 ```
 
-## Target 1 @showdialog
+## ターゲット1 @showdialog
 
-Now you know how to move your agent up, down, left, right, forward and back, you can now move onto something a little more difficult!
+エージェントを上下左右前後に動かす方法がわかったので、少し難しいことに挑戦しましょう！
 
 ![Target 1](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/lake/target_1.jpg)
 
-## Get to Target 1
-Can you move your agent, using `||agent:agent.move(DIRECTION, DISTANCE)||`, to stand on the pressure pad on the golden block?
+## ターゲット1に到達する
+`||agent:agent.move(DIRECTION, DISTANCE)||`を使って、エージェントを金色のブロックの上の感圧板の上に立たせることができますか？
 
-**Using `||agent:agent.move(DIRECTION, DISTANCE)||`, move your agent to the Golden block.**
+**`||agent:agent.move(DIRECTION, DISTANCE)||`を使って、エージェントを金色のブロックまで移動させましょう。**

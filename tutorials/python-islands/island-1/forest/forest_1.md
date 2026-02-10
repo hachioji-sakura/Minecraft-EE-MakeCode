@@ -4,37 +4,37 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Python Islands 1 - Forest 1
+# Python Islands 1 - 森 1
 
 ```template
 agent
 ```
 
-## Climbing the Tree @showdialog
-Using our agent, let's rebuild the broken ladder to investigate the smoke coming from the top of the tree.   
+## 木に登る @showdialog
+エージェントを使って、壊れたはしごを修復し、木のてっぺんから出ている煙を調査しましょう。   
 
-Marcus has already loaded your agent with some ladders.   
+エージェントはすでにはしごを装備しています。   
 
 ![Cover Image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/forest/cover.png)
 
-## Get Agent to the Ladder
-First you need to get your agent to the ladder using `||agent:agent.move(DIRECTION, BLOCKS)||`
+## エージェントをはしごまで移動させる
+まず、`||agent:agent.move(DIRECTION, BLOCKS)||`を使ってエージェントをはしごまで移動させる必要があります。
 ```python
 agent.move(FORWARD, 1)
 ```
 
-## Fixing the Ladder
-Now you're ready to start fixing the ladder up the tree.
-To place blocks, you can use `||agent:agent.place(DIRECTION)||`. 
-Add an `||agent:agent.place||`, to place a ladder in front (`FORWARD`) of your agent.
+## はしごを修復する
+これで、木の上のはしごを修復する準備ができました。
+ブロックを配置するには、`||agent:agent.place(DIRECTION)||`を使用できます。 
+`||agent:agent.place||`を追加して、エージェントの前（`FORWARD`）にはしごを配置しましょう。
 ```python
 agent.move(FORWARD, 1)
 agent.place(FORWARD)
 ```
 
-## Fix the Rest
-With the first ladder replaced, there seems to be another missing ladder above...
-Complete the path by replacing the second ladder (using `||agent:agent.move||` and `||agent:agent.place||`).
+## 残りを修復する
+最初のはしごを置き換えたので、上にもう1つ欠けているはしごがあるようです...
+`||agent:agent.move||`と`||agent:agent.place||`を使って2番目のはしごを置き換えて、道を完成させましょう。
 
-## All Done
-Now climb up the ladder and investigate the smoke!
+## 完了
+これではしごを登って、煙を調査しましょう！
