@@ -1,0 +1,76 @@
+name: Update pxt.json & Release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "**.md"
+      - "!README.md"
+      - "pxt.json"
+  workflow_dispatch:
+
+jobs:
+    update-pxt:
+        runs-on: ubuntu-latest
+        name: Update pxt.json file
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: setup python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: 3.13
+
+            - name: Run script
+              run: python3 scripts/generate-pxt.py
+
+            - name: check for changes
+              id: git-check
+              run: |
+                  if git diff --quiet; then
+                    echo "No changes detected, exiting workflow successfully"
+                    exit 0
+                  fi
+                  echo "changes=true" >> $GITHUB_OUTPUT
+
+            - name: Push to git
+              if: steps.git-check.outputs.changes == 'true'
+              run: |
+                echo "Commiting and pushing new pxt.json"
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add .
+                git commit -m "Update pxt.json"
+                git push
+
+    release:
+        runs-on: ubuntu-latest
+        name: Create Relase
+        needs: update-pxt
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                sparse-checkout: |
+                  .github
+
+            - name: Setup python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: 3.13
+
+            - name: Get new version
+              id: next-version
+              run: |
+                echo "next_version=$(python3 .github/scripts/next-version.py)" >> $GITHUB_OUTPUT
+
+            - name: Create a Release
+              if: steps.next-version.outputs.next_version != 'ERROR'
+              uses: elgohr/Github-Release-Action@v5
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                title: ${{steps.next-version.outputs.next_version}}
+                tag: ${{steps.next-version.outputs.next_version}}

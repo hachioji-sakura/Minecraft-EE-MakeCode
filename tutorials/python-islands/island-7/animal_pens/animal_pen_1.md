@@ -1,0 +1,65 @@
+### @flyoutOnly true
+### @hideDone true
+### @codeStart players set @s codeExecution 1
+### @codeStop players set @s codeExecution 0
+### @explicitHints true
+
+# Animal Pen
+
+## Introduction @showdialog
+
+In this exercise, you will build a program in Python that follows the flowchart below:
+
+![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart.png)
+
+## Spawn the animals - 1
+   
+![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart-landscape_1.png)
+To start, code the part of the flowchart in black by spawning a cow at your position. Use the hint if you need help.   
+Once complete move onto the next part.
+
+### ~ tutorialhint
+The example below spawns a cow at the player position.
+```python
+mobs.spawn(COW, player.position())
+```
+
+
+## Spawn the animals - 2
+
+![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart-landscape_2.png)
+Now code the next part of the flowchart which is now shown in black. Use the hint if you need help.
+   
+### ~ tutorialhint
+The example below spawns a cow at the player position.   
+You need to also spawn a pig and sheep.
+```python
+mobs.spawn(COW, player.position())
+```
+
+
+## Extension @showdialog
+
+Here's some ideas to add to your Animal Spawner:
+
+- Spawn in random selection of animals into the pens (use the world coordinates instead of pos).
+- Try to use a `||loops:for||` loop to spawn in multiple animals at each location.
+- Try and create an animal pen with fences to keep the animals in.
+
+```ghost
+import random
+
+blocks.place(OAK_FENCE, player.position())
+
+pos = positions.add(pos(0, 0, 0), pos(0, 0, 0))
+
+pos_2 = world(0, 0, 0)
+pos_3 = pos(0, 0, 0)
+
+
+for i in range(3):
+    rand_num = random.randint(1, 10)
+    for i in range(rand_num):
+        mobs.spawn(COW, player.position())
+        
+```
