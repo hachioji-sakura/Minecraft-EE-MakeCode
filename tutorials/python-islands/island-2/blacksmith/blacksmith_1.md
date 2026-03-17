@@ -4,16 +4,16 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Blacksmith
+# 鍛冶屋
 
 ```customts
 /**
- * Gives command to help the blacksmith.
+ * 鍛冶屋を手伝うコマンドを与える
  */
 //% color=Grey weight=100 icon="\uf0e3" block="blacksmith"
 namespace blacksmith {
     /**
-    * Get purity of ore
+    * 鉱石の純度を取得する
     */
     //% block="purity %direction"
     //% direction.defl=FORWARD
@@ -35,7 +35,7 @@ namespace blacksmith {
     }
 
     /**
-    * Deny the ore.
+    * 鉱石を却下する
     */
     //% block="Deny Ore"
     export function deny():void {
@@ -44,7 +44,7 @@ namespace blacksmith {
     }
 
     /**
-    * Accept the ore.
+    * 鉱石を受け入れる
     */
     //% block="Accept Ore"
     export function accept():void {
@@ -63,37 +63,37 @@ if(blacksmith.purity(FORWARD) <== 3) {
 }
 ```
 
-## Extracting Pure Iron @showdialog
-Now you have collected the iron ore that is needed. The final step is making sure it is pure enough to use! The Blacksmith has asked you to find the purest of all the iron, using your Agent.
+## 純粋な鉄の抽出 @showdialog
+必要な鉄鉱石を集めました。最後のステップは、使用するのに十分な純度かどうかを確認することです！鍛冶屋は、エージェントを使って最も純度の高い鉄を見つけてほしいと頼んでいます。
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/blacksmith/cover.png)
 
-## Checking ore purity
+## 鉱石の純度を確認する
 
-To help with this task, the blacksmith has equipped your agent with a special function that can check iron purity called ``||blacksmith:blacksmith.purity()||``.
+この作業を手伝うため、鍛冶屋はエージェントに ``||blacksmith:blacksmith.purity()||`` という鉄の純度をチェックできる特別な関数を装備してくれました。
 
-This function takes in a direction such as `FORWARD` in which the agent should check.
+この関数は、エージェントがチェックする方向（例：`FORWARD`）を引数として受け取ります。
 
-*There's no code to write in this step, move on to the next step to start*
+*このステップではコードを書く必要はありません。次のステップに進んで始めましょう*
 
-## Step 1
+## ステップ 1
 
-As we want the purest of iron from our ores, we will use an ``||logic:if||`` statement, to check if the purity of the block less than 3.
+鉱石から最も純粋な鉄を得たいので、``||logic:if||`` 文を使って、ブロックの純度が 3 未満かどうかをチェックします。
 
-Python includes more than just checking if one item equals another item (using `==`). It also allows you to check for greater than or less than.
+Python では、ある値が別の値と等しいか（`==` を使用）をチェックするだけでなく、より大きいか小さいかのチェックもできます。
 
-**Create an ``||logic:if||``  to check if the purity of the ore is  `less than or equal` (using  <=  ) to `3`**
+**鉱石の純度が `3` 以下（`<=` を使用）かどうかをチェックする ``||logic:if||`` を作成してください。**
 
 ```python
 if(blacksmith.purity(FORWARD) <= 3):
     player.say("Purity less than or equal to 3!")
-    // Code goes here in the next step
+    // 次のステップでここにコードを書く
 ```
 
-## Step 2
-Now, with the if statement ready to check for the iron that is not pure enough to be used, let's use the ``||blacksmith:blacksmith.deny()||`` command, to mark the block as invalid for the Blacksmith.
+## ステップ 2
+鉄の純度が 3 以下かどうかをチェックする if 文ができたので、``||blacksmith:blacksmith.deny()||`` コマンドを使って、鍛冶屋にとって無効なブロックとしてマークしましょう。
 
-**Add your ``||blacksmith:blacksmith.deny||`` command, so that it runs when the purity is less than or equal to 3**
+**純度が 3 以下のときに ``||blacksmith:blacksmith.deny||`` が実行されるように追加してください。**
 
 ```diffpython
 if(blacksmith.purity(FORWARD) <= 3):
@@ -104,13 +104,13 @@ if(blacksmith.purity(FORWARD) <= 3):
     blacksmith.deny()
 ```
 
-## Step 3
+## ステップ 3
 
-Having the code completed for the iron with purity less than or equal to 3, let's add our code for the accepted blocks of iron ore.
+純度が 3 以下の鉄用のコードが完成したので、受け入れる鉄鉱石ブロック用のコードを追加しましょう。
 
-To accept an ore, the Blacksmith has given us a command called ``||blacksmith:blacksmith.accept()||``
+鉱石を受け入れるには、鍛冶屋が ``||blacksmith:blacksmith.accept()||`` というコマンドをくれています。
 
-**Add an `else` statement that executes an ``||blacksmith:blacksmith.accept||`` command below your if statement**
+**if 文の下に、``||blacksmith:blacksmith.accept||`` を実行する `else` 文を追加してください。**
 
-## Check all the ore!
-Now with your code complete, run it over and over again until all the iron has been checked!
+## すべての鉱石をチェックしよう！
+コードが完成したら、すべての鉄がチェックされるまで何度も実行してください！

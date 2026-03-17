@@ -1,4 +1,4 @@
-# Run four times (one for each seed)
+# 4回実行する（種ごとに1回）
 agent.move(FORWARD, 3)
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
 if block == WHEAT:

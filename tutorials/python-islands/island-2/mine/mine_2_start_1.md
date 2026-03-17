@@ -4,24 +4,24 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine - 2 ladder
+# 鉱山 - 2 はしご
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
 
-## Ladders! @showdialog
+## はしご！ @showdialog
 
-"Now that we have ladders, I have gone and placed them for you. Why not head down and explore?"
+「はしごができたので、君のために設置してきた。降りて探索してみないか？」
 
 ![Ladders](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/ladders.jpg)
 
-## Close the editor
-Close this window by pressing ESC or clicking the X at the top right of the Code Builder.
+## エディターを閉じる
+ESC キーを押すか、コードビルダー右上の X をクリックしてこのウィンドウを閉じてください。
 
 ```python
 ```

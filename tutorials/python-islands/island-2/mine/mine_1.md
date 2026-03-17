@@ -4,15 +4,15 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine - 1 
+# 鉱山 - 1
 
 ```customts
 /**
- * Functions for working in the mine
+ * 鉱山で作業するための関数
  */
 namespace agent {
     /**
-    * Checks if the ground below the agent is stable
+    * エージェントの下の地面が安定しているかチェックする
     */
     //% block="agent check ground stable"
     export function check_ground_unstable(): boolean{
@@ -24,7 +24,7 @@ namespace agent {
     }
 
     /**
-     * Alert ground below agent is unstable
+     * エージェントの下の地面が不安定であることを警告する
      */
     //% block
     export function alert(){
@@ -45,35 +45,35 @@ agent.alert()
 agent.move(FORWARD, 1)
 ```
 
-## Testing the unstable ground @showdialog
+## 不安定な地面をテストする @showdialog
 
-With an area of unstable ground having opened up, use your agent to test each block to check it is safe.
+地面の不安定な区域が開いたので、エージェントを使ってブロックごとに安全かどうかチェックしてください。
 
-You have been informed by the miner that an area of ground has opened up and sank down. He is concerned that the ground below could be unstable and has asked if you can use your agent (which can float), to check each block individually to see if it is safe.
+鉱夫から、地面の一部が開いて沈んだと聞いています。彼は下の地面が不安定かもしれないと心配しており、（浮くことができる）エージェントを使ってブロックを一つずつチェックして安全かどうか確認してほしいと頼んでいます。
 
 ![Unstable ground](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/cover1.jpg)
 
-## Testing the ground
+## 地面をテストする
 
-The miner has provided your agent with a special function to check if the ground below is safe, ``||agent:agent.check_ground_unstable()||``
+鉱夫が、下の地面が安全かどうかをチェックする特別な関数 ``||agent:agent.check_ground_unstable()||`` をエージェントに用意してくれました。
 
-This function will provide back:
+この関数は次のように返します：
 
-- **True**  : If the ground below your agent is stable.
-- **False** : If the ground below your agent is unstable.
+- **True**  ：エージェントの下の地面が安定している場合。
+- **False** ：エージェントの下の地面が不安定な場合。
 
-**Using ``||player:player.say()||`` check if the ground below your agent is safe.**
+**``||player:player.say()||`` を使って、エージェントの下の地面が安全かどうか確認してください。**
 ```spy
 player.say(agent.check_ground_unstable())
 ```
 
-## Alerting
+## 警告する
 
-The 2nd special function the miner has given your agent is ``||agent:agent.alert()||``
+鉱夫がエージェントに用意した 2 つ目の特別な関数は ``||agent:agent.alert()||`` です。
 
-You should run this piece of code if you find any unstable ground.
+不安定な地面を見つけたら、このコードを実行してください。
 
-**Using what you learnt in the previous sections on "if" statements, create a program that runs "alert()" if the unstable ground is detected**
+**「if」文について学んだことを使って、不安定な地面が検出されたときに「alert()」を実行するプログラムを作成してください。**
 
 ```spy
 if (agent.check_ground_unstable()){
@@ -81,10 +81,10 @@ if (agent.check_ground_unstable()){
 }
 ```
 
-## Scanning the gravel pit
-Now add in ``||agent:agent.move()||`` to move your agent around the gravel area, block by block.
+## 砂利採掘場をスキャンする
+``||agent:agent.move()||`` を追加して、エージェントを砂利区域でブロックごとに動かしてください。
 
-**Update you code to move your agent **FORWARD** each time your code runs**
+**コードが実行されるたびにエージェントを **FORWARD**（前）に移動するようにコードを更新してください。**
 
-## Scan the whole gravel pit
-Once your code is complete, try using it to check each gravel block to find if any are unstable.
+## 砂利採掘場全体をスキャンする
+コードが完成したら、各砂利ブロックをチェックして不安定なものがないか探してみてください。

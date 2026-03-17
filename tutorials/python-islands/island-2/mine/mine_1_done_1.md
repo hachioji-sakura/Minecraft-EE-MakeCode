@@ -4,40 +4,40 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine - 1 done
+# 鉱山 - 1 完了
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Collapse! @showdialog
+## 崩落！ @showdialog
 
-Part of the gravel has collapsed!
+砂利の一部が崩れ落ちました！
 
 ![Miner](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/miner.jpg)
 
-"Phew, isn't that lucky I didn't check the area myself, I could have fallen down there!"
+「ふう、自分で確認しなくて本当に良かった。あそこに落ちるところだった！」
 
 
 ![Collapsed](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/collapse.jpg)
 
-## Start an investigate @showdialog
+## 調査を始めよう @showdialog
 
 ![Miner](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/miner.jpg)
 
-"It looks like a pretty large drop down there. I think, **we should investigate!** We will need to **make some ladders** though.
+「下はかなり深い落ち込みのようだ。**調査する必要がある**と思う。ただ、**はしごをいくつか作る**必要があるな。
 
-Can you go, find some **string** and **wood** to make ladders with?
+**糸**と**木材**を探して、はしごを作ってきてくれないか？
 
-You should be able to find some suitable wood in the **forest** and the **farmer** might have some spare string from the wool of his sheep?"
+**森**に適した木材があるはずだし、**農家**が羊の羊毛から余った糸を持っているかもしれない？」
 
-**Find some string and wood to make ladders to investigate the mysterious opening.**
+**謎の穴を調査するために糸と木材を探してはしごを作ろう。**
 
-## Close the editor
-Close this window by pressing ESC or clicking the X at the top right of the Code Builder.
+## エディターを閉じる
+ESC キーを押すか、コードビルダー右上の X をクリックしてこのウィンドウを閉じてください。
 
 ```python
 ```

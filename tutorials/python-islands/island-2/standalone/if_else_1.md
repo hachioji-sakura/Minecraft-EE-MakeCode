@@ -4,12 +4,12 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# If-Else
+# If-Else（条件分岐）
 
 ```customts
 namespace gameplay {
     /**
-    * Randomize the current weather
+    * 現在の天気をランダムに変える
     */
     //% block
     export function randomWeather(): void {
@@ -23,7 +23,7 @@ namespace gameplay {
 
 namespace player {
     /**
-    * Completes the task
+    * タスクを完了する
     */
     //% block
     export function complete(): void {
@@ -41,39 +41,39 @@ if (THUNDER) {
 }
 ```
 
-## Making decisions in Python @showdialogue
+## Python で判断する @showdialogue
 
-It is common in programming to need to make a decision. In a decision, you want to run some code `||logic:if||` a condition is `||logic:True||`.  
+プログラミングでは、条件に応じて判断を下すことがよくあります。判断では、ある条件が ``||logic:True||`` のときに ``||logic:if||`` でコードを実行したいと思います。
 
-For example, a common decision we have to make all the time is whether to put a rain coat on.     
+例えば、いつも判断しなければならないことの一つに、レインコートを着るかどうかがあります。
 
-If it is raining ---> then we should put a coat on!
+雨が降っているなら ---> コートを着よう！
 
-In Python, we can approach this like below:
+Python では、次のように書けます：
 
 ```python
 if gameplay.weather_query() == RAIN:
     player.say("Put on a coat!")
 ```
 
-## If Statement
+## If 文
 
-Finish off the program below to check if the `||gameplay:gameplay.weather_query()||` is `||THUNDER||`. Add a message to `||player:player.say||` on line 2, if there is thunder.
+以下のプログラムを完成させ、``||gameplay:gameplay.weather_query()||`` が ``||THUNDER||`` かどうかをチェックしてください。雷の場合は 2 行目で ``||player:player.say||`` にメッセージを追加してください。
 
 ```python
 if gameplay.weather_query() == THUNDER:
     player.say("Thunder!")
 ```
 
-## What about if it isn't raining? @showdialogue
+## 雨じゃない場合は？ @showdialogue
 
-We have covered how to handle if something is the case, but what if it isn't?   
+何かが成り立つ場合の扱いは説明しましたが、成り立たない場合はどうでしょう？
 
-What if it isn't raining?
+雨が降っていない場合は？
 
-To hand if it is not, we use an `||logic:else||`. `||logic:Else||` allows code to be run **if all else fails** as such.   
+成り立たない場合を扱うには `||logic:else||` を使います。`||logic:Else||` は**それ以外すべて**の場合にコードを実行できます。
 
-Here is an example:
+例は次のとおりです：
 
 ```python
 if gameplay.weather_query() == RAIN:
@@ -82,9 +82,9 @@ else:
     say("Just put on a jumper")
 ```
 
-## Else statement
+## Else 文
 
-Finish off the program to send a different appropriate message if there is no `||THUNDER||`.
+``||THUNDER||`` がない場合に、適切な別のメッセージを送るようにプログラムを完成させてください。
 
 ```python
 if gameplay.weather_query() == THUNDER:
@@ -93,11 +93,11 @@ else:
     player.say("There is no thunder :)")
 ```
 
-## Indentation
+## インデント
 
-Indentation is the number of blank spaces at the start of a line. In Python, indentation is used to signify which pieces of code are contained within which structure.
+インデントとは、行の先頭の空白の数です。Python では、どのコードがどの構造に含まれるかを示すためにインデントを使います。
 
-**Run the `||player:player.complete||` function to complete the task. Make sure it isn't indented so it will definitely run.**
+**タスクを完了するには ``||player:player.complete||`` 関数を実行してください。必ず実行されるように、インデントしないでください。**
 
 ```python
 if gameplay.weather_query() == THUNDER:

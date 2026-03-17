@@ -4,15 +4,15 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Farm
+# 農場
 
 ```customts
 /**
-* Functions approve and reject
+* 承認と拒否の関数
 */
 namespace agent {
     /**
-    * Mark the seed below as wheat
+    * 下の種を小麦としてマークする
     */
     //% block
     export function approve(): void {
@@ -21,7 +21,7 @@ namespace agent {
     }
 
     /**
-    * Mark the seed below as carrot
+    * 下の種をニンジンとしてマークする
     */
     //% block
     export function reject(): void {
@@ -32,31 +32,32 @@ namespace agent {
 }
 ```
 
-## Carrot and Wheat Checking @showdialog
-Help remove the carrots from the wheat farm!
-Peter had some of his wheat and carrot seeds mixed up while planting them. Since your agent can detect **any** block, it can be programmed to check the seeds. Let's get started!
+## ニンジンと小麦のチェック @showdialog
+小麦農場からニンジンを取り除くのを手伝おう！
+ピーターは植え付けのときに小麦とニンジンの種をいくつか混ぜてしまいました。エージェントは**あらゆる**ブロックを検出できるので、種をチェックするプログラムを組めます。始めましょう！
 ![Cover image of Peter](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/farm/PeterCover.png)
 
-Peter has two special functions you can use to mark the seeds:
+ピーターが種をマークするために使える 2 つの特別な関数を用意してくれました：
 
-- `agent.approve()`: Approves the seed below (as a wheat seed)
+- `agent.approve()`：下の種を承認する（小麦の種として）
 
-- `agent.reject()`: Rejects the seed below (as a carrot seed)
-## Move Your Agent
+- `agent.reject()`：下の種を拒否する（ニンジンの種として）
 
-**Move your agent forward 3 blocks to the first seed marked by the white marker.**   
+## エージェントを動かす
+
+**白いマーカーで印がついた最初の種まで、エージェントを 3 ブロック前に移動させてください。**   
    
-**Do not run your code just yet!**
+**まだコードを実行しないでください！**
 
 ```python
 agent.move(FORWARD, 3)
 ```
 
-## Inspect Blocks With Your Agent
-Now that your agent is above some seeds. Let's inspect what seeds they are. Your agent can inspect blocks using `||agent:agent.inspect(AgentInspection.BLOCK, DIRECTION)||`:
+## エージェントでブロックを調べる
+エージェントが種の上に来ました。どんな種か調べましょう。エージェントは `||agent:agent.inspect(AgentInspection.BLOCK, DIRECTION)||` でブロックを調べられます：
 
-**Make the agent inspect down, store the result in a new variable called `block`.**
-**Then `say` the value stored in the `block` variable.**
+**エージェントに下を調べさせ、結果を `block` という新しい変数に格納してください。**
+**そして、`block` 変数に格納された値を `say` で表示してください。**
 
 ```python
 agent.move(FORWARD, 3)
@@ -64,19 +65,19 @@ block = agent.inspect(AgentInspection.BLOCK, DOWN)
 player.say(block)
 ```
 
-## If Statement Reminder @showdialog
+## If 文のおさらい @showdialog
 
-From our last step, the agent outputted the seed that is detected, which was `WHEAT`. Now we want to make some code that will choose what to do when your agent finds wheat. For this, we will use an `if` statement. 
-Here's a reminder of what it looks like:
+前のステップでは、エージェントが検出した種（`WHEAT`）を表示しました。今度は、エージェントが小麦を見つけたときに何をするか選ぶコードを作ります。そのために `if` 文を使います。
+形のおさらいです：
 
 ```python
 if (condition):
-    # Code to run if condition is true
+    # 条件が真のときに実行するコード
 ```
 
-**Remember we use one = sign to assign the value of a variable and two (==) for comparison, to check if the value of those variables are equal.**
+**変数に値を代入するときは = を 1 つ、2 つの変数の値が等しいか比較するときは == を 2 つ使うことを忘れないでください。**
 
-For example:
+例：
 
 ```python
 name = "bob"
@@ -84,13 +85,13 @@ if (name == "bob"):
     say("It's bob!")
 ```
 
-## Using Inspect with If
-Add the code that you want to run below the if statement, indented once to the right.
+## Inspect と If を組み合わせる
+if 文の下に、インデントを 1 つ右にずらして実行したいコードを追加してください。
 
 `||logic:if (condition):||`
-        # Do something
+        # 何かする
 
-**Create an `||logic:if||` statement to check if the block is *equal to* `WHEAT`. If it is, run `||agent:agent.approve()||`.**
+**ブロックが `WHEAT` と*等しい*かチェックする ``||logic:if||`` 文を作成してください。等しければ ``||agent:agent.approve()||`` を実行してください。**
 
 ```python
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
@@ -100,17 +101,17 @@ if block == WHEAT:
 ```
 
 
-## Else Statement Reminder @showdialog
-Great! Now with all that together, we can use an `else` statement to reject any blocks that are not wheat.
-Here's a reminder of what an `else` statement looks like...
+## Else 文のおさらい @showdialog
+いいですね！これで、小麦ではないブロックを拒否するために `else` 文が使えます。
+`else` 文の形のおさらいです…
 ```python
 if (condition):
-    # Code to run if condition is true
+    # 条件が真のときに実行するコード
 else:
-    # Code to run if condition is NOT true
+    # 条件が真でないときに実行するコード
 ```
 
-For example:
+例：
 
 ```python
 name = "bob"
@@ -120,13 +121,13 @@ else:
     say("It isn't bob!")
 ```
 
-## Add an Else Statement
+## Else 文を追加する
 `||logic:if (condition):||`
-        # Do something
+        # 何かする
 `||logic:else:||`
-        # Do something else
+        # 別のことをする
 
-Add an else statement to your code that runs the `||agent:reject||` function.
+``||agent:reject||`` 関数を実行する else 文をコードに追加してください。
 
 ```python
 if block == WHEAT:
@@ -135,5 +136,5 @@ else:
     agent.reject()
 ```
 
-## Repeat for the Rest
-Now you have added the `||logic:else||` statement, run your code a few times to get your agent to the end of the field. Then when you have checked all four spots, Peter will want to have a chat with you.
+## 残りも繰り返す
+``||logic:else||`` 文を追加したので、コードを何度か実行してエージェントを畑の端まで進めてください。4 箇所すべてをチェックしたら、ピーターが話しかけてきます。

@@ -4,38 +4,38 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine - 2
+# 鉱山 - 2
 
-## Exploring the mineshaft @showdialog
+## 坑道を探索する @showdialog
 
-Use your agent to explore the old mineshafts in search of iron.
+鉄を探して、古い坑道をエージェントで探索してください。
 
 ![Old mineshafts](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/mine_2.gif)
 
-## Finding Iron @showdialog
+## 鉄を探す @showdialog
 
 ![Dark mineshaft](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/mine/dark_mine.jpg)
 
-There seems to be a collection of old mineshafts, going off from the main tunnel. Rumour has it that these have unexplored deposits of iron.
+本坑から分かれた古い坑道がいくつかあるようです。うわさでは、未探索の鉄の鉱床があるとか。
 
-Unfortunately, though, it's too dark to see what is at the end of the shafts. Perhaps you should guide your agent down the shafts to check if there is iron?
+残念ながら、坑道の奥は暗くて何があるか見えません。エージェントを坑道の奥まで案内して、鉄があるか確認してみてはどうでしょう？
 
-## Programming your agent
+## エージェントにプログラムする
 
-Using your agent, check each of the 5 mine shafts, to see if they have any iron ore right at the end, in the darkness. If there is, you should mine it!
+エージェントを使って、5 本の坑道をそれぞれチェックし、暗闇の奥に鉄鉱石があるか確認してください。あれば、採掘してください！
 
-You will likely need to use each of the below commands at least once in your program.
+プログラムでは、以下のコマンドをそれぞれ少なくとも 1 回は使う必要があるでしょう。
 
 - ``||agent:agent.move()||``
 - ``||agent:agent.destroy()||``
 - ``||agent:agent.inspect()||``
 
-Finally, don't forget to use your **whistle** with this task!
+最後に、この任務では**ホイッスル**を使うことを忘れないでください！
 
-## Write your program
-**Write a program that, if your agent detects `IRON_ORE`, it breaks it. Be careful though not to break any other blocks!**
+## プログラムを書く
+**エージェントが `IRON_ORE` を検出したら壊すプログラムを書いてください。ただし、他のブロックは壊さないように注意！**
 
-Once you have finished the program, hit the run button above. To complete this task, you must search all five mineshafts to find which shafts contain iron ore blocks at the end of them.
+プログラムができたら、上の実行ボタンを押してください。この任務を完了するには、5 本の坑道すべてを調べて、奥に鉄鉱石ブロックがある坑道を特定する必要があります。
 
 ```python
 if agent.inspect(AgentInspection.Block, FORWARD) == IRON_ORE:

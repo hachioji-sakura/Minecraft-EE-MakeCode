@@ -4,12 +4,12 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Forest
+# 森
 
 ```customts
 namespace agent {
     /**
-     * Harvest block infront of the agent
+     * エージェントの前のブロックを収穫する
     */
     //% block Harvest block
     export function harvest(): void {
@@ -24,7 +24,7 @@ namespace agent {
     }
 
     /**
-    * Checks if the block infront of agent is a nest, returns True is there is, else False.
+    * エージェントの前のブロックが巣かどうかをチェックする。巣があれば True、なければ False を返す。
     */
     //% block Check if block is nest
     export function is_nest(): boolean {
@@ -36,7 +36,7 @@ namespace agent {
     }
 
     /**
-    * Moves agent to the next location
+    * エージェントを次の場所に移動させる
     */
     //% block Move to next location
     export function next_location(): void {
@@ -55,45 +55,45 @@ agent.next_location()
 ```
 
 
-## Collecting Forest Wood @showdialog
+## 森の木材を集める @showdialog
 
-The island's forest has a thick fog over it, making it nearly impossible for the forest explorers to harvest wood for the island!
+島の森には濃い霧がかかっており、森の探索者たちが島用の木材を収穫するのはほとんど不可能です！
 
-TJ has asked if you and your agent could harvest some wood from the trees. You can then **keep some for your ladders** as well.
+TJ が、君とエージェントで木から木材を収穫してくれないかと頼んでいます。**はしご用に少し取っておく**こともできます。
 
-You need to be **extremely** careful though, not to disturb the birds, that are nesting in the trees!
+ただし、木に巣を作っている**鳥を邪魔しない**よう、**十分**注意する必要があります！
 
 ![Cover image of forest](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-2/forest/ForestCover.png)
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-TJ has given your agent a few special functions for your agent to use in this forest task:
+TJ が、この森の任務で使える特別な関数をいくつかエージェントに用意してくれました：
 
-- ``||agent:agent.is_nest()||``: If there is a birds nest in front of your agent, return back `True`. Otherwise, return back `False`.
+- ``||agent:agent.is_nest()||``：エージェントの前に鳥の巣があれば `True` を返す。なければ `False` を返す。
 
-- ``||agent:agent.harvest()||``: Carefully harvests the wood in front of your agent and then drops it to the ground.
+- ``||agent:agent.harvest()||``：エージェントの前の木材を慎重に収穫し、地面に落とす。
 
-- ``||agent:agent.next_location()||``: TJ will move your agent for you, to the next branch.
+- ``||agent:agent.next_location()||``：TJ がエージェントを次の枝に移動させてくれる。
 
-## Step 1
+## ステップ 1
 
-TJ has moved the agent to directly in front of a branch. Your first job to check (without being able to see the agent), whether there is a nest on the branch.
+TJ がエージェントを枝の真正面に移動させました。最初の仕事は、（エージェントが見えない状態で）枝に巣があるかどうかを確認することです。
 
-You can use the ``||agent:agent.is_nest()||`` function for this. It will return a `True` if there is a nest, or a `False` if there is just normal wood.
+これには ``||agent:agent.is_nest()||`` 関数が使えます。巣があれば `True`、普通の木材だけなら `False` を返します。
 
-**Using ``||player:player.say()||`` to display the result, check if there's a nest in front of the agent.**
+**``||player:player.say()||`` で結果を表示して、エージェントの前に巣があるか確認してください。**
 
 ```spy
 player.say(agent.is_nest())
 ```
 
-## Step 2
+## ステップ 2
 
-Now that you know how to use ``||agent:agent.is_nest()||``, we can use it with an ``||logic:if||`` statement, to check **if** the block in front is a nest.
+``||agent:agent.is_nest()||`` の使い方がわかったので、``||logic:if||`` 文と組み合わせて、前のブロックが**巣かどうか**をチェックできます。
 
-If there is a nest, we want to leave it alone and run ``||agent:agent.next()||`` to go to the next area.
+巣がある場合は触らず、``||agent:agent.next()||`` を実行して次の場所へ進みます。
 
-**Create an ``||logic:if||`` statement that moves to the next area if ``||agent:agent.is_nest()||`` returns `True`**
+**``||agent:agent.is_nest()||`` が `True` を返したときに次の場所へ移動する ``||logic:if||`` 文を作成してください。**
 
 ```spy
 if(agent.is_nest()){
@@ -101,13 +101,13 @@ if(agent.is_nest()){
 }
 ```
 
-## Step 3
+## ステップ 3
 
-Next, we want to add an ``||logic:else:||`` so we are able to harvest other blocks and then go to the next area.
+次に、他のブロックを収穫してから次の場所へ進めるように ``||logic:else:||`` を追加します。
 
-**Add a ``||agent:agent.harvest()||`` in an ``||logic:else:||`` statement you created.**    
-**Remember to go to the next location after harvesting as well!**
+**作成した ``||logic:else:||`` 文の中に ``||agent:agent.harvest()||`` を追加してください。**    
+**収穫した後も次の場所へ移動することを忘れずに！**
 
-## Step 4
+## ステップ 4
 
-With all of that together, you can run this program a few times, until you find enough wood. Just make sure you don't disturb the birds! Good luck!
+これですべて揃いました。十分な木材が見つかるまで、このプログラムを何度か実行してください。鳥を邪魔しないように気をつけて！頑張って！
