@@ -4,25 +4,25 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Deliver the Diamond
+# ダイヤモンドを届ける
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Getting the Dye @showdialog
+## 染料を手に入れよう @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/mine_technician/cover.png)
 
-Thanks for giving a hand with sorting the ores.
+鉱石の選別を手伝ってくれてありがとう。
 
-Could you get the dye from Genieve at the Botanical Gardens?
+植物園のジェニーブから染料をもらってきてもらえないか？
 
 
-**Frankie**
+**フランキー**
 
 ```spy
 ```

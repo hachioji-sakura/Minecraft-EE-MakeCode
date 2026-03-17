@@ -1,10 +1,10 @@
-# Run this to get all poppies from a row
+# 1列分のヒナゲシをすべて取得するために実行する
 while agent.get_item_count(1) < 4:
     agent.move(FORWARD, 1)
     if agent.check_flower(DOWN) == POPPY:
         agent.destroy(DOWN)
 
-# Use this to move an agent to the next row (you may need to replace LEFT with RIGHT)
+# エージェントを次の列に移動させる（LEFT を RIGHT に変える必要がある場合あり）
 agent.turn_left()
 agent.turn_left()
 agent.move(LEFT, 1)

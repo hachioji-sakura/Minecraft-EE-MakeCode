@@ -4,16 +4,16 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Plant
+# 植物（Plant）
 
 ```customts
 /**
- * Scientist
+ * 科学者
  */
 //% color=purple weight=100 icon="\uf0c3" block="Scientist"
 namespace scientist {
     /**
-    * Gets the hydration of a plant.
+    * 植物の水分量を取得する
     */
     //% block
     export function getHydration(plant: any): string {
@@ -33,7 +33,7 @@ namespace scientist {
     }
 
     /**
-    * Gets the nutrition of a plant.
+    * 植物の栄養価を取得する
     */
     //% block
     export function getNutrition(plant: any): string {
@@ -53,7 +53,7 @@ namespace scientist {
     }
 
     /**
-    * Gets the strength of a plant.
+    * 植物の強度を取得する
     */
     //% block
     export function getStrength(plant: any): string {
@@ -73,7 +73,7 @@ namespace scientist {
     }
 
     /**
-    * A scientist will check the information you provide.
+    * 科学者が提供した情報をチェックする
     */
     //% block
     export function submit(answer: any[]) {
@@ -102,35 +102,35 @@ namespace scientist {
 }
 ```
 
-## Plant Processing @showdialog
+## 植物の処理 @showdialog
 
-The scientists at the Space Research Centre need to select the correct plants to send into space. Your Agent has been given a special device, to allow it to get the properties of the plants. This will allow it to check if they may thrive in space.   
+宇宙研究センターの科学者は、宇宙に送る正しい植物を選ぶ必要がある。エージェントに植物の性質を取得できる特別な装置が渡されている。宇宙で育つかどうかをチェックできる。
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/plant/cover.png)
 
-## Inspect the Block below
-**Use `||agent:agent.inspect||` to inspect the block in the down direction and store it in a variable called `block`.**
+## 下のブロックを調べる
+**下方向のブロックを ``||agent:agent.inspect||`` で調べ、`block` という変数に格納してください。**
 
-**Then output the block name using `||blocks:blocks.name_of_block(ID)||` and `||player:player.say||`.**
+**次に ``||blocks:blocks.name_of_block(ID)||`` と ``||player:player.say||`` でブロック名を表示してください。**
 
 ```python
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
 player.say(blocks.name_of_block(block))
 ```
 
-## Lists @showdialog
-In Python we can create a list called `my_list` like this:
+## リスト @showdialog
+Python では `my_list` というリストを次のように作れる：
 
 ```python
 my_list = ["A", "B", "C", "D"]
 ```
 
-All of the items within the list are within square brackets and are separated with commas.
+リスト内の要素は角括弧で囲み、カンマで区切る。
 
-You can also put variables in the list.
+変数をリストに入れることもできる。
 
-## The Scientists' Functions @showdialog
-The scientist has a few functions that you can use to get information about certain plants:
+## 科学者の関数 @showdialog
+科学者が、特定の植物の情報を取得するために使える関数をいくつか用意している：
 
 `||scientist:scientist.get_hydration(block)||`
 
@@ -138,10 +138,10 @@ The scientist has a few functions that you can use to get information about cert
 
 `||scientist:scientist.get_strength(block)||`
 
-They all take a block as a parameter (which you might get by using `||agent:agent.inspect||`).
+いずれも引数にブロックを取る（``||agent:agent.inspect||`` で取得できる）。
 
-## Get the Hydration, Nutrition, and Strength
-**Create variables `hydration`, `nutrition`, and `strength` that contain the information returned by their respective functions.**
+## 水分・栄養・強度を取得する
+**それぞれの関数が返す情報を格納した変数 `hydration`、`nutrition`、`strength` を作成してください。**
 
 ```python
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
@@ -152,10 +152,10 @@ nutrition = scientist.get_nutrition(block)
 strength = scientist.get_strength(block)
 ```
 
-## Information About a Plant
-**Create a list containing `block`, `hydration`, `nutrition`, and `strength` in that order and use the `||scientist:scientist.submit||` function to check it against the scientists' results.**
+## 植物の情報
+**`block`、`hydration`、`nutrition`、`strength` をこの順で含むリストを作り、``||scientist:scientist.submit||`` で科学者の結果と照合してください。**
 
-After your code gets the correct information about the first plant, use it to check the other two. Your agent will be moved automatically.
+最初の植物の正しい情報が得られたら、他の 2 つもチェックするために使ってください。エージェントは自動的に移動する。
 
 ```python
 plant_info = [...]

@@ -4,20 +4,20 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go to the Space Centre
+# 宇宙センターへ行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Analysing Plants @showdialog
+## 植物の分析 @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/misc/From_Start_To_Plant.png)
 
-The Prime Minister has asked you to start by going to the Space Centre. Once there, talk to Davin about the plant research that has been taking place for this upcoming space mission.
+首相から、まず宇宙センターへ行くよう頼まれました。到着したら、今後の宇宙ミッションに向けた植物研究についてダビンに話を聞いてください。
 
 ```spy
 ```

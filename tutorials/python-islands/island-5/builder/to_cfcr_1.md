@@ -4,24 +4,24 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Help with decoding a message
+# メッセージの解読を手伝う
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Head to the Centre for Computer Research @showdialog
+## コンピュータ研究センターへ向かおう @showdialog
 
 ![Building for Centre for Computer Research](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/builder/CFCR.jpg)
 
-Thank you for the help with building the towers for the telescope!
+望遠鏡の塔の建設を手伝ってくれてありがとう！
 
-I heard that the Centre for Computer Research could do with your agent expertise to decode some information coming in from a previous telescope. Could you go over to give them a hand?
+コンピュータ研究センターが、以前の望遠鏡から届く情報を解読するのに君のエージェントの技術を活用したいと聞いた。手伝いに行ってくれないか？
 
-**Declan**
+**デクラン**
 
 ```spy
 ```

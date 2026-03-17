@@ -1,7 +1,7 @@
-# Positions agent above the first piece of cobblestone
+# エージェントを最初の丸石の上に配置する
 agent.move(FORWARD, 1)
 
-# Gets all the gold in a row, then click the button to move agent to the next row and run all the code again
+# 1列分の金をすべて取得する。その後ボタンをクリックしてエージェントを次の列に移動させ、コードを再実行する
 for i in range(3):
     for dig in range(3):
         agent.destroy(DOWN)

@@ -4,32 +4,32 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Prime Minister Message
+# 首相からの伝言
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Message from the Prime Minister @showdialog
+## 首相からの伝言 @showdialog
 
 ![Photo of Prime Minster](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/prime_minster/PM_Photo.jpg)
 
-I am receiving some worrying news... The island you are currently on is on a slow collision course with the mining island!
+気になる知らせが届いている…君がいる島は、鉱山の島にゆっくりと衝突するコースにあるのだ！
 
-We must help the gentleman that lives on this island...
+この島に住む紳士を助けなければならない…
 
-I say we should build an airship for him!
-
-
-Head over to the mine and get the diamond for the new airship that's getting built.
-
-There you will meet Frankie, our mine technician.
+彼のために飛行船を作るべきだと思う！
 
 
-**Prime Minister**
+鉱山へ行き、建造中の新しい飛行船用のダイヤモンドを手に入れてほしい。
+
+そこで鉱山技術者のフランキーに会える。
+
+
+**首相**
 
 ```spy
 ```

@@ -4,20 +4,20 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Island 6
+# アイランド 6
 
-## Welcome to Island 6 @showdialog
+## アイランド 6 へようこそ @showdialog
 
-On this island you will learn about `lists` in python
+この島では Python の `lists`（リスト）について学びます。
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/start/cover.png)
 
-More specifically you will learn about...
+具体的には次のことを学びます…
 
-- Creating lists,
-- Appending to lists,
-- Using `in` with `if` statements to check contents of lists,
-- Looping through lists,
-- Nested lists,
-And more!
+- リストの作成
+- リストへの追加（append）
+- リストの内容をチェックする `if` 文での `in` の使い方
+- リストのループ
+- ネストしたリスト（リストのリスト）
+その他！
 
-**When you're ready, talk to the Prime Minister!**
+**準備ができたら、首相に話しかけてください！**

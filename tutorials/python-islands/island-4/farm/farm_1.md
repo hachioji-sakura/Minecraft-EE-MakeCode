@@ -5,11 +5,11 @@
 ### @codeStop players set @s codeExecution 0
 
 
-# Farm
+# 農場
 ```customts
 namespace agent {
     /**
-    * Returns the flower in the specified direction.
+    * 指定した方向の花を返す
     */
     //% block
     export function checkFlower(direction: SixDirection): Block {
@@ -24,40 +24,40 @@ namespace agent {
 ```
 
 
-## Automated Flower Picking and Sorting @showdialog
+## 花の自動収穫と選別 @showdialog
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/farm/cover.jpg)
 
-**Gardener** - "*Welcome to the Botanical Gardens! We need your help picking some poppies, to make into the red dye you need. Can you and your agent help pick those poppies for me?*"   
+**庭師** - 「*植物園へようこそ！必要な赤い染料にするヒナゲシを摘むのを手伝ってほしい。君とエージェントでヒナゲシを摘んでくれないか？*」
 
-Using a `||loops:while||` loop, your agent will keep collecting poppies **while you don't have enough**. Once you have enough poppies (4), your agent will stop.   
+`||loops:while||` ループを使うと、**十分な数になるまで**エージェントがヒナゲシを集め続けます。ヒナゲシが十分（4 つ）になったら、エージェントは止まります。
 
-## Task 1
-**Setup a `||loops:while||` loop and set it's condition to use `||agent:agent.get_item_count||` with the slot number as the only parameter (1). Repeat this loop while there are less than 4 poppies in slot 1.**
+## タスク 1
+**`||loops:while||` ループを用意し、条件に ``||agent:agent.get_item_count||`` をスロット番号（1）だけを引数にして使ってください。スロット 1 のヒナゲシが 4 つ未満の間、このループを繰り返します。**
 
 ```python-ignore
 while agent.get_item_count(1) < 4:
 ```
 
-## Task 2
+## タスク 2
 
-**Within the loop, add `||agent:agent.move||` to move you agent in the 'FORWARD' direction while the agent has less than 4 poppies.**
+**ループの中で、ヒナゲシが 4 つ未満の間、エージェントを 'FORWARD'（前）方向に動かす ``||agent:agent.move||`` を追加してください。**
 
-Remember you can call your agent back with the whistle at any time.
+いつでもホイッスルでエージェントを呼び戻せることを忘れないでください。
 
 ```python
 while agent.get_item_count(1) < 4:
     agent.move(FORWARD, 1)
 ```
 
-## Check Flower and Destroy @showdialog
-Now that you've got your agent moving, it needs to check what flower is below and decide if it should harvest (*destroy*) it or not.    
-To do this, you can use `||agent:agent.check_flower||` (and the direction `DOWN`), which returns back the type of flower below the agent.    
-With this information, you can use it within an `||logic:if||` statement, to check if the flower is a `"POPPY"`.    
-If it is a poppy you can use `||agent:agent.destroy||` (and the direction `DOWN`) to pick the flower  below your agent.
+## 花をチェックして壊す @showdialog
+エージェントを動かせるようになったので、下にどんな花があるか確認し、収穫（*壊す*）するかどうか決める必要があります。
+そのために ``||agent:agent.check_flower||``（方向は `DOWN`）が使えます。エージェントの下の花の種類を返します。
+この情報を `||logic:if||` 文で使い、花が `"POPPY"` かどうかをチェックできます。
+ヒナゲシなら、``||agent:agent.destroy||``（方向は `DOWN`）でエージェントの下の花を摘めます。
 
-## Task 3
-**Add an `||logic:if||` statement within your while loop to check if the flower is a `"POPPY"` using `||agent:agent.check_flower||`.**    
-**If it is, call the `||agent:agent.destroy||` method. Your code should be checking below (DOWN) your agent.**
+## タスク 3
+**while ループの中に、``||agent:agent.check_flower||`` で花が `"POPPY"` かどうかをチェックする `||logic:if||` 文を追加してください。**
+**ヒナゲシなら、`||agent:agent.destroy||` を呼んでください。エージェントの下（DOWN）をチェックするようにしてください。**
 
 ```python
 while agent.get_item_count(1) < 4:
@@ -66,9 +66,9 @@ while agent.get_item_count(1) < 4:
         agent.destroy(DOWN)
 ```
 
-## Task 4
-Now that your agent has checked one row of flowers, you need to move to the next row. To do this add `||agent:agent.move||` and `||agent:agent.turn||` above your while loop so that your agent will start the next row.
-Repeat this a few more times, changing the direction that the agent turns each time, to search all the rows.
+## タスク 4
+エージェントが 1 列の花をチェックし終えたので、次の列に移る必要があります。そのために while ループの上に ``||agent:agent.move||`` と ``||agent:agent.turn||`` を追加し、エージェントが次の列を始められるようにしてください。
+向きを変える方向を毎回変えながら、もう何度か繰り返して、すべての列を調べてください。
 
 ```ghost
 agent.turn(LEFT)

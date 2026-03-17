@@ -1,4 +1,4 @@
-# Run for each column of books, agent can be moved between columns using whistle
+# 本棚の各列ごとに実行する。ホイッスルで列の間を移動できる
 for i in range(5):
     if agent.check_book_on_shelf(FORWARD) == True:
         player.say("Found the book!")

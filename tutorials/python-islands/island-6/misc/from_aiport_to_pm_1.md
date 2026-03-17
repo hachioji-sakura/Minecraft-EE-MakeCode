@@ -4,23 +4,23 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go to the PM
+# 首相のところへ行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Inform the Prime Minister @showdialog
+## 首相に報告しよう @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/misc/From_Airport_To_PM.png)
 
-With the runway finished, the airplane with the needed parts for the rocket can now land!
+滑走路が完成したので、ロケット用の部品を載せた飛行機が着陸できるようになった！
 
-Now head to the Parliament Building to inform the Prime Minister of your progress.
+議会の建物へ行き、首相に進捗を報告してください。
 
-*The Parliament Building can be found on the main island.*
+*議会の建物はメインの島にあります。*
 ```spy
 ```

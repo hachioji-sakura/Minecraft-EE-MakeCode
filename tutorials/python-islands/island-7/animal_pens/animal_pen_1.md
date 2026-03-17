@@ -4,47 +4,47 @@
 ### @codeStop players set @s codeExecution 0
 ### @explicitHints true
 
-# Animal Pen
+# 動物の囲い（Animal Pen）
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-In this exercise, you will build a program in Python that follows the flowchart below:
+この演習では、下のフローチャートに従う Python プログラムを作成します。
 
 ![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart.png)
 
-## Spawn the animals - 1
+## 動物をスポーンさせる - 1
    
 ![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart-landscape_1.png)
-To start, code the part of the flowchart in black by spawning a cow at your position. Use the hint if you need help.   
-Once complete move onto the next part.
+まず、フローチャートの黒い部分に対応するコードを書き、自分の位置に牛をスポーンさせましょう。必要ならヒントを使ってください。  
+終わったら次のパートに進みます。
 
 ### ~ tutorialhint
-The example below spawns a cow at the player position.
+次の例は、プレイヤーの位置に牛をスポーンさせるコードです。
 ```python
 mobs.spawn(COW, player.position())
 ```
 
 
-## Spawn the animals - 2
+## 動物をスポーンさせる - 2
 
 ![Flow chart of task](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/animal_pens/images/flowchart-landscape_2.png)
-Now code the next part of the flowchart which is now shown in black. Use the hint if you need help.
+次に、黒で示されたフローチャートの部分に対応するコードを書きます。必要ならヒントを使ってください。  
    
 ### ~ tutorialhint
-The example below spawns a cow at the player position.   
-You need to also spawn a pig and sheep.
+次の例は、プレイヤーの位置に牛をスポーンさせるコードです。  
+ここでは牛だけでなく、ブタとヒツジもスポーンさせる必要があります。
 ```python
 mobs.spawn(COW, player.position())
 ```
 
 
-## Extension @showdialog
+## 発展課題（Extension）@showdialog
 
-Here's some ideas to add to your Animal Spawner:
+Animal Spawner（動物スポーナー）に追加できるアイデアの例です：
 
-- Spawn in random selection of animals into the pens (use the world coordinates instead of pos).
-- Try to use a `||loops:for||` loop to spawn in multiple animals at each location.
-- Try and create an animal pen with fences to keep the animals in.
+- ワールド座標（`pos` ではなく `world`）を使って、ランダムな動物の組み合わせを囲いの中にスポーンさせる。
+- 各場所で複数の動物をスポーンさせるために、`||loops:for||` ループを使ってみる。
+- フェンスで囲いを作り、動物が出ていかないようにしてみる。
 
 ```ghost
 import random

@@ -4,7 +4,7 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine
+# 鉱山
 
 ```template
 let found_diamond = 0;
@@ -16,7 +16,7 @@ while (found_diamond < 3) {
 ```customts
 namespace agent {
     /**
-    * Returns the type of ore
+    * 鉱石の種類を返す
     */
     //% block="agent check shelf %direction"
     //% direction.defl=FORWARD
@@ -31,7 +31,7 @@ namespace agent {
     }
 
     /**
-    * Marks a diamond block
+    * ダイヤモンドブロックに印をつける
     */
     //% block="agent mark diamond"
     export function markDiamond(): void {
@@ -45,7 +45,7 @@ namespace agent {
     }
 
     /**
-    * Marks a block for disposal
+    * 廃棄するブロックに印をつける
     */
     //% block="agent mark bin"
     export function markBin(): void {
@@ -60,19 +60,19 @@ namespace agent {
 }
 ```
 
-## Sort the Mined Material @showdialog
+## 採掘したものを選別する @showdialog
 ![Farming](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/mine/cover.jpg)
 
-Welcome to the Mine! The miners need a hand with sorting today's mined ores. However, the sorting room has too much dust for you to go in. So your agent has been sent in. Program it to sort and mark ores ready for processing.
-You will need to find 3 Diamond ores in this task.
+鉱山へようこそ！今日採掘した鉱石の選別を鉱夫たちが手伝ってほしいと言っています。ただ、選別室は粉塵が多すぎて人が入れません。なのでエージェントが送り込まれました。選別して処理用に印をつけるプログラムを書きましょう。
+この任務ではダイヤモンド鉱石を 3 つ見つける必要があります。
 
 
-## While Loops @showdialog
-First, we want to create the `||loops:while||` loop that runs while you haven't yet found all three 3 Diamond ore blocks you are looking for.
+## While ループ @showdialog
+まず、探している 3 つのダイヤモンド鉱石ブロックをまだすべて見つけていない間だけ実行される `||loops:while||` ループを作ります。
 
-To do this, we can use a `||loops:while||` loop and check if a variable that we use to keep count of the Diamonds, is less than 3, using the `<` symbol. This means what is on the left of the symbol is less than what's on the right.
+そのために `||loops:while||` ループを使い、ダイヤモンドの数を数える変数が `<` 記号で 3 未満かどうかをチェックします。これは、記号の左側が右側より小さいことを意味します。
 
-Below is an example of a `||loops:while||` loop.
+以下が `||loops:while||` ループの例です。
 
 
 ```python
@@ -81,11 +81,11 @@ while found_diamond < 3:
     player.say("I keep looping!")
 ```
 
-## Task 1
+## タスク 1
 
-Your agent has been given a special function for checking these ores called `||agent:agent.check_ore||` which returns the ore in the specified direction.
+エージェントに、指定した方向の鉱石を返す `||agent:agent.check_ore||` という特別な関数が与えられています。
 
-**Add an `||logic:if||` statement, using `||agent:agent.check_ore||`, inside the loop to check if the block in front of your agent is `DIAMOND_ORE`, if it is increment the found_diamond counter and `||player:player.say||` "`diamond found`".**
+**ループの中に、``||agent:agent.check_ore||`` を使った `||logic:if||` 文を追加し、エージェントの前のブロックが `DIAMOND_ORE` かどうかをチェックしてください。ダイヤモンドなら found_diamond を増やし、``||player:player.say||`` で「`diamond found`」と表示してください。**
 
 ```python
 found_diamond = 0
@@ -95,13 +95,13 @@ while found_diamond < 3:
         found_diamond = found_diamond + 1
 ```
 
-## Marking Diamonds @showdialog
-Now that we know how to check for diamond ore, we need to mark the blocks that contain it for the miners. To do this, we can use `||agent:agent.mark_diamond||`, which will mark the diamond ore ready for processing by the mine.
+## ダイヤモンドに印をつける @showdialog
+ダイヤモンド鉱石のチェック方法がわかったので、鉱夫向けにダイヤモンドを含むブロックに印をつける必要があります。そのために `||agent:agent.mark_diamond||` が使えます。鉱山で処理できるようにダイヤモンド鉱石に印をつけてくれます。
 
-We also need to mark the other ores that are not diamond, to be disposed of, to do this we can use an `||logic:else||` statement after the if statement and `||agent:agent.mark_bin||`, to mark an ore to be disposed of. An `||logic:else||` statement is run when the `||logic:if||` statement above it isn't triggered.
+ダイヤモンド以外の鉱石にも、廃棄する印をつける必要があります。if 文の後に `||logic:else||` 文と `||agent:agent.mark_bin||` を使い、廃棄する鉱石に印をつけます。`||logic:else||` 文は、その上の `||logic:if||` 文が実行されなかったときに実行されます。
 
-## Task 2
-**Change the `||player:player.say||` function to the `||agent:agent.mark_diamond||` function so the miners know where the diamond ore is.**
+## タスク 2
+**鉱夫がダイヤモンド鉱石の場所を知れるように、``||player:player.say||`` を ``||agent:agent.mark_diamond||`` に変更してください。**
 
 ```python
 found_diamond = 0
@@ -111,8 +111,8 @@ while found_diamond < 3:
         found_diamond = found_diamond + 1
 ```
 
-## Task 3
-**Add an `||logic:else||` statement within the `||loops:while||` loop that runs `||agent:agent.mark_bin||` if the ore is not diamond ore so the miners know to get rid of it.**
+## タスク 3
+**`||loops:while||` ループの中で、鉱石がダイヤモンド鉱石でないときに ``||agent:agent.mark_bin||`` を実行する `||logic:else||` 文を追加し、鉱夫が廃棄すべきだとわかるようにしてください。**
 
 
 ```ghost

@@ -4,31 +4,31 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Translator
+# トランスレーター（変換器）
 
 ```customts
 /**
- * Provides the ability to decode the translator's computer.
+ * トランスレーターのコンピュータを解読する機能を提供する
  */
 //% color=purple weight=100 icon="\uf002" block="Telescope"
 namespace telescope {
     /**
-    * Tells the Telescope to run your decode function.
+    * 望遠鏡に解読関数を実行するよう指示する
     */
     //% block"Decode telescope bit signal"
     export function decode_signals(): void {
-        // This is a bodge: makecode doesn't support Record<> for objects so `object[key]` doesn't work in the ts compiler
+        // 暫定対応: makecode は Record<> をオブジェクトでサポートしないため ts コンパイラで `object[key]` が使えない
         const index_key = [ORANGE_CONCRETE_POWDER, MAGENTA_CONCRETE_POWDER, LIGHT_BLUE_CONCRETE_POWDER, YELLOW_CONCRETE_POWDER]
         const index_value = ["a", "b", "c", "d"]
-        // List of expected bits from user's decode() function
+        // ユーザーの decode() 関数から期待されるビットのリスト
         const list_of_numbers: number[] = [1, 2, 4, 3, 2, 1]
 
-        let counter = 0  // Counter used for checking how far we're through the message
+        let counter = 0  // メッセージの進行状況をチェックするためのカウンター
 
         for(let bit_index = 0; bit_index < list_of_numbers.length; bit_index++){
             const bit = list_of_numbers[bit_index]
             const inspect = agent.inspect(AgentInspection.Block, FORWARD)
-            // get block
+            // ブロックを取得
             const block_key_index: number = index_key.indexOf(inspect)
             let block = "Z"
             if (block_key_index >= 0){
@@ -36,7 +36,7 @@ namespace telescope {
             }
 
             counter++
-            const num = decode(block)  // Runs user's decode
+            const num = decode(block)  // ユーザーの decode を実行
 
             if (num === undefined) {
                 throw "No number given! Please fix your function, or Reset Bit Input and try again."
@@ -47,11 +47,11 @@ namespace telescope {
                 player.say("Incorrect bit given!")
                 throw "Incorrect bit! Please fix your function, or Reset Bit Input and try again."
             } else {
-                if (counter === 6) {  // If we recieve the last bit
+                if (counter === 6) {  // 最後のビットを受信した場合
                     player.say("Received full all the data, task complete!")
                     player.say("Data: 1, 2, 4, 3, 2, 1")
                     loops.pause(1000)
-                } else { // Load next bit
+                } else { // 次のビットを読み込む
                     player.say("Loading Next Bit")
                 }
                 mobs.spawn(21, world(1007, 150, 132))  // 21 is a Snow Golem
@@ -65,35 +65,35 @@ namespace telescope {
 
 ```template
 
-// Leave this at the bottom of your code so we know to run your decode function!
+// 解読関数を実行するため、コードの最後にこの行を残してください！
 telescope.decode_signals()
 ```
 
-## Translate the Input @showdialog
+## 入力を受け取って変換する @showdialog
 
-**Jolene**- "*Welcome to the Centre for Computer Research. We have created an advanced computer program, to calculate the angle the telescope should be pointing to receive messages from space. Would you mind giving us a hand with decoding the data it outputs?*"
+**ジョリーン**- 「*コンピュータ研究センターへようこそ。宇宙からのメッセージを受信するために望遠鏡が向けるべき角度を計算する、高度なコンピュータプログラムを作りました。その出力データの解読を手伝ってもらえませんか？*」
 
 ![Computer terminal](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/translator/cover.jpg)
 
-## Step 1
+## ステップ 1
 
-The Centre for Computer Research has asked you to create a `decode` function for them. It will be used with your Agent, to decode the data that the computer outputs.
+コンピュータ研究センターから、彼らのために `decode` 関数を作ってほしいと頼まれました。エージェントと一緒に使い、コンピュータが出力するデータを解読するのに使います。
 
-To be able to transfer the data into your `function`, you need to create a `parameter`. A `parameter` allows you to pass data into a function in the form of a variable, from the main program.
+データを `function`（関数）に渡すには、`parameter`（引数）を作る必要があります。`parameter` を使うと、メインプログラムから変数の形で関数にデータを渡せます。
 
-** To begin lets create a function called `decode`  with a single parameter called `info`**
+**まず、`info` という 1 つの引数を持つ `decode` という関数を作成してください。**
 
 ```python
 def decode(info):
     pass
 ```
 
-## Step 2
-Great! Now we have data being passed into the function using the `info` parameter. `info` will contain a letter, and the computer requires a matching number from that letter.
+## ステップ 2
+関数に `info` という引数でデータが渡されるようになりました。`info` には文字が入り、コンピュータはその文字に対応する数字が必要です。
 
-To start with let's return `1` when `info` is `"a"`. For this, you can use an `||logic:if||` statement.
+まず `info` が `"a"` のときに `1` を返すようにしましょう。そのために `||logic:if||` 文が使えます。
 
-After the `||logic:if||` statement, within the function, add an `||logic:else||` statement to provide a default value of `0` if the info parameter is not recognised.
+`||logic:if||` の後、関数の中で、`info` が認識されないときのデフォルト値 `0` を返す `||logic:else||` 文を追加してください。
 
 ```python
 def decode(info):
@@ -103,13 +103,13 @@ def decode(info):
         return 0
 ```
 
-## Step 3
+## ステップ 3
 
-Now we have a basic `decode` function created, we need to make sure it can handle all of the inputs the computer might want us decode.
+基本的な `decode` 関数ができたので、コンピュータが解読してほしい入力すべてに対応できるようにします。
 
-To do this we'll extend the `||logic:if||`  you create with `||logic:elif||`.
+そのために、作った `||logic:if||` を `||logic:elif||` で広げます。
 
-Use the following table create a set of `||logic:if/else||` statements to return the correct number.
+次の表に従って、正しい数字を返す `||logic:if/else||` 文のセットを作成してください。
 
 | info     | return |
 |----------|--------|
@@ -125,13 +125,13 @@ def decode(info):
         return 1
     elif info == "b":
         return 2
-    # ... and so on
+    # ... 以下同様
     else:
         return 0
 ```
 
-## Run your code!
+## コードを実行しよう！
 
-When you're ready, run your code and see if it works!
+準備ができたらコードを実行して、動くか確認してください！
 
-*Note: You will need to hit the **Reset Bit Input** button above your Agent before you start your code!*
+*注意：コードを始める前に、エージェントの上にある **Reset Bit Input** ボタンを押す必要があります！*

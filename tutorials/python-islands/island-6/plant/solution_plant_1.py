@@ -1,4 +1,4 @@
-# Run 3 times, once for each plant. The agent will move automaticall when you submit the correct info.
+# 植物ごとに1回、計3回実行する。正しい情報を送信するとエージェントが自動的に移動する。
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
 player.say(blocks.name_of_block(block))
 

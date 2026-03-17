@@ -4,33 +4,33 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Mine
+# 鉱山
 
-## Gold Digging! @showdialog
+## 金を掘る！ @showdialog
 
-Recently the island has come across a few stray blocks of gold which they can use to help advance their technology! Michael has asked if you're willing to help mine some gold ore, with the Agent, in the areas that would not be safe for people to go down.
+最近、島で使える金のブロックがいくつか見つかり、技術を進めるのに役立っています！マイケルが、人が降りるには安全でない場所で、エージェントを使って金鉱石を掘る手伝いをしてほしいと頼んでいます。
 
 ![Picture of Mine expert and mine](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/mine/cover.png)
 
-## Step 1
+## ステップ 1
 
-Michael has an idea of where these blocks of gold are underground. He got his team of miners to replace the top blocks to cobblestone to show where to dig down!
+マイケルは、金のブロックが地下のどこにあるか見当をつけています。掘る場所がわかるように、鉱夫のチームに地表のブロックを丸石に置き換えてもらいました！
 
-To start, let's use ``||agent:agent.move||`` and move onto the first block.
+まず、``||agent:agent.move||`` で最初のブロックの上に移動しましょう。
 
-**Move the Agent FORWARD one block to step on top of the cobblestone.**
+**エージェントを 1 ブロック FORWARD（前）に動かし、丸石の上に乗せてください。**
 
 ```python
 agent.move(FORWARD, 1)
 ```
 
-## Step 2
+## ステップ 2
 
-Now to start digging! Michael knows that the gold is going to be three blocks below the surface.
+さあ、掘り始めましょう！マイケルによると、金は地表から 3 ブロック下にあります。
 
-For this, we will need to use ``||agent:agent.destroy||`` and ``||agent:agent.move||`` to dig `DOWN` underground. To repeat this three times, we'll use a ``||loops:for||`` loop.
+``||agent:agent.destroy||`` と ``||agent:agent.move||`` で地下に `DOWN`（下）へ掘り進めます。3 回繰り返すために ``||loops:for||`` ループを使います。
 
-**Create a ``||loops:for||`` loop to repeat three times and have the Agent destroy the block below it and move down.**
+**3 回繰り返す ``||loops:for||`` ループを作成し、エージェントに下のブロックを壊してから下に移動させてください。**
 
 ```python
 for dig in range(0,3):
@@ -38,11 +38,11 @@ for dig in range(0,3):
     agent.move(DOWN, 1)
 ```
 
-## Step 3
+## ステップ 3
 
-As we're three blocks below the surface, we need to check if there's gold. For this, we'll use an `if` statement as well as ``||agent:agent.inspect||`` to get the details of the block. Then to get the name of the block we can look using an ``||logic:if||`` . Michael has warned us that if it's not gold, then **breaking the block could make the agent fall off the island!**
+地表から 3 ブロック下に来たので、金があるか確認します。そのために `if` 文と ``||agent:agent.inspect||`` でブロックの詳細を取得し、``||logic:if||`` でブロック名をチェックします。マイケルから、金でないブロックを壊すと**エージェントが島から落ちる可能性がある**と注意されています！
 
-**Add an ``||logic:if||`` statement to check if the block below the agent is `GOLD_ORE`. If it is, destroy it!**
+**エージェントの下のブロックが `GOLD_ORE` かどうかをチェックする ``||logic:if||`` 文を追加してください。金鉱石なら壊してください。**
 
 ```python
 for dig in range(0,3):
@@ -53,11 +53,11 @@ if block == GOLD_ORE:
     agent.destroy(DOWN)
 ```
 
-## Step 4
+## ステップ 4
 
-Nice! With any gold extracted and the stone left in place, we'll move the agent back up the tunnel!
+金を採掘し、石はそのままにしたら、エージェントを坑道を上がって戻しましょう！
 
-**Use ``||agent:agent.move||`` to move your agent up, `3` blocks.**
+**``||agent:agent.move||`` でエージェントを上に `3` ブロック移動させてください。**
 ```python
 for dig in range(0,3):
     agent.destroy(DOWN)
@@ -68,14 +68,14 @@ if block == GOLD_ORE:
 agent.move(UP, 3)
 ```
 
-## Step 5
+## ステップ 5
 
-Now your code is done, try mining out the first tunnel.
+コードができたら、最初の坑道を掘ってみましょう。
 
-## Step 5
+## ステップ 5
 
-With the main code out of the way and completed time to put it all together and get it working!
+メインのコードが完成したら、全体をまとめて動かしましょう！
 
-Most of the code is here but, it's not ready yet...
+コードのほとんどはここにありますが、まだ完成していません…
 
-**Create another ``||loops:for||`` loop to run the tunnel checking code `3` times with the code you already have, and then make the agent move forward at the end!**
+**既にある坑道チェックのコードを `3` 回実行する ``||loops:for||`` ループをさらに作成し、最後にエージェントを前に移動させてください！**

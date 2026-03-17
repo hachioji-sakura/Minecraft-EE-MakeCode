@@ -4,22 +4,22 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go to the Airport runway
+# 空港の滑走路へ行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Time for Deliveries! @showdialog
+## 配送の時間だ！ @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/misc/From_Rocket_To_Airport.png)
 
-A plane carrying the needed replacement parts for the rocket has been unable to land at the runway! You will need to repair it quickly, so the plane can land!
+ロケットの交換部品を載せた飛行機が滑走路に着陸できていない！飛行機が着陸できるよう、すぐに修理する必要がある！
 
-Head over to the airport ASAP. It can be found on its own island, with access near the Hotel/Museum.
+至急空港へ向かってください。ホテル／博物館の近くから行ける、別の島にある。
 
 ```spy
 ```

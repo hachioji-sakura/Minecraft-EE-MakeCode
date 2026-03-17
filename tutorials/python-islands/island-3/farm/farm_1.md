@@ -4,7 +4,7 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Farm
+# 農場
 
 ```ghost
 agent.place(DOWN)
@@ -20,39 +20,39 @@ if (block == WHEAT) {
 agent.
 ```
 
-## Automated Farming and Crop Harvesting @showdialog
+## 自動農作業と作物の収穫 @showdialog
 
-Now that you can use ``||loops:for||`` loops. Let's test your skills by having your agent automatically harvest and replant a farm plot!
+``||loops:for||`` ループが使えるようになったので、エージェントに農地の収穫と再植えを自動でやらせて腕試ししましょう！
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/farm/cover.png)
 
-## Step 1
+## ステップ 1
 
-Peter has given your agent the exact number of seeds you need for planting.
+ピーターが、植え付けに必要な種の正確な数をエージェントに渡してくれました。
 
-To start, we'll need to move the agent forward before we inspect the first crop.
+まず、最初の作物を調べる前にエージェントを前に進める必要があります。
 
-**Move your agent forward one block!**
+**エージェントを 1 ブロック前に進めてください！**
 
 ```spy
 agent.move(FORWARD, 1)
 ```
 
-## Step 2
+## ステップ 2
 
-Great, now we'll get the agent to inspect block below and store it in a variable.
+次に、エージェントに下のブロックを調べさせ、変数に格納します。
 
-**Add a new variable called `block` and set it equal to the block the agent inspects**
+**`block` という新しい変数を追加し、エージェントが調べたブロックを代入してください。**
 
 ```spy
 const block = agent.inspect(AgentInspection.Block, DOWN)
 ```
 
-## Step 3
+## ステップ 3
 
-Now with the block name stored in a variable. We can use an ``||logic:if||`` statement to choose what to do depending on the block below the agent.
+ブロック名が変数に格納できました。``||logic:if||`` 文で、エージェントの下のブロックに応じて処理を分けられます。
 
-**Add an ``||logic:if||`` statement to check if the block is `WHEAT`**
+**ブロックが `WHEAT` かどうかをチェックする ``||logic:if||`` 文を追加してください。**
 
 ```spy
 const block = agent.inspect(AgentInspection.Block, DOWN)
@@ -61,9 +61,9 @@ if(block == WHEAT){
 }
 ```
 
-## Step 4
+## ステップ 4
 
-With the code ready for checking when the block is wheat, we can harvest the wheat using ``||agent:agent.destroy()||`` and giving a direction, then place seeds using ``||agent:agent.place()||`` with the direction you want your agent to place the seeds.
+小麦のときのチェックができたので、``||agent:agent.destroy()||`` に方向を指定して小麦を収穫し、``||agent:agent.place()||`` で種を置く方向を指定して植え替えましょう。
 
 ```spy
 const block = agent.inspect(AgentInspection.Block, DOWN)
@@ -74,11 +74,11 @@ if(block == WHEAT){
 }
 ```
 
-## Step 5
+## ステップ 5
 
-With the ``||logic:if||`` statement finished, let's make the ``||logic:elif||`` statement!
+``||logic:if||`` 文ができたので、``||logic:elif||`` 文を作りましょう！
 
-**Add an ``||logic:elif||`` statement to plant a seed using ``||agent:agent.place()||`` if the block is `AIR`**
+**ブロックが `AIR` のときに ``||agent:agent.place()||`` で種を植える ``||logic:elif||`` 文を追加してください。**
 
 ```spy
 const block = agent.inspect(AgentInspection.Block, DOWN)
@@ -92,12 +92,12 @@ if(block == WHEAT){
 }
 ```
 
-## Step 6
+## ステップ 6
 
-Great! Now with all that together, let's add our for loop to repeat it all, more than once, and along with that we should make sure we add a ``||agent:agent.move()||`` so our agent moves forward each time.
+ここまでできたら、for ループで全体を何度も繰り返し、``||agent:agent.move()||`` で毎回エージェントを前に進めるようにしましょう。
 
-**Create a ``||loops: for loop||`` to run the code you already have for the range of `0` to `8`. As well make sure the agent moves `FORWARD` with ``||agent:agent.move()||``**
+**既にあるコードを `0` から `8` の範囲で繰り返す ``||loops: for loop||`` を作成してください。また、``||agent:agent.move()||`` でエージェントを `FORWARD`（前）に移動させることも忘れずに。**
 
-## Start Harvesting!
+## 収穫を始めよう！
 
-Now with all your code together, run it and **call your agent back to the diamond blocks using your whistle**. Happy farming!
+コードが揃ったら実行し、**ホイッスルでエージェントをダイヤモンドブロックのところに呼び戻して**ください。農作業を楽しんで！

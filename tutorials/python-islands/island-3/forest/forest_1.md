@@ -4,15 +4,15 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Forest
+# 森
 
 ```template
-# Removes the block in front of the agent. Add the rest yourself!
+# エージェントの前のブロックを壊す。残りは自分で追加しよう！
 agent.destroy(FORWARD)
 
 
 
-# Add your code above
+# 上にコードを追加
 ```
 
 ```ghost
@@ -25,19 +25,19 @@ for (let i = 0; i < 5; i++){
 }
 ```
 
-## Taking down the Tree @showdialog
+## 腐った木を倒す @showdialog
 
-Help the Tree Experts take down the rotting tree! As your agent can fly up and down, they have asked you if you can help remove a bulk of the tree trunk.
+木の専門家を手伝って、腐った木を倒しましょう！エージェントは上下に飛べるので、幹の大部分を取り除くのを手伝ってほしいと頼まれています。
 
-Don't worry though, supports and scaffolding have been put in place to hold the top part up while you work, so it will not collapse.
+作業中は上部を支える支柱と足場が設置してあるので、崩れないので安心してください。
 
 ![Cover image of tree](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/forest/cover.png)
 
-## Step 1
+## ステップ 1
 
-To start, we'll need to remove the base of the tree. This is as simple as removing the bottom 4 blocks with your agent using ``||agent:agent.destroy||``, and moving using ``||agent:agent.move||`` to the next block!
+まず、木の根元を取り除きます。``||agent:agent.destroy||`` で下の 4 ブロックを壊し、``||agent:agent.move||`` で次のブロックへ移動するだけです！
 
-**Using ``||agent:agent.destroy||`` and ``||agent:agent.move||`` remove the 4 logs on the bottom layer of the tree!**
+**``||agent:agent.destroy||`` と ``||agent:agent.move||`` を使って、木の最下層の 4 本の丸太を取り除いてください！**
 
 ```spy
 agent.destroy(FORWARD)
@@ -50,31 +50,31 @@ agent.move(FORWARD, 1)
 agent.destroy(FORWARD)
 ```
 
-## Step 2
+## ステップ 2
 
-Now that you have the bottom layer of logs removed from the tree. Let's remove a stack of logs! You can use a ``||loops:for||`` loop to repeat the same code over and over again, a set number of times.
+木の最下層の丸太を取り除けたので、次は丸太の積み重なりを取り除きましょう。``||loops:for||`` ループで、同じコードを決まった回数だけ繰り返せます。
 
-**Create a ``||loops:for||`` loop in your code that repeats 12 times**
+**12 回繰り返す ``||loops:for||`` ループをコードに作成してください。**
 
-*Use the hint if you need a reminder of what a for loop looks like*
+*for ループの形を忘れたらヒントを見てください*
 
 
 ```spy
 for (let count = 0; count < 12; count++){
-    // Code to be repeated
+    // 繰り返すコード
     player.say("Hi")
 }
 ```
 
-## Step 3
+## ステップ 3
 
-Great, now with your `for` loop ready, let's use it to destroy above the agent and then move up!
+for ループができたら、エージェントの上を壊してから上へ移動するようにしましょう。
 
-**Using ``||agent:agent.destroy||`` and ``||agent:agent.move||``, program the agent to destroy `12` logs.**
+**``||agent:agent.destroy||`` と ``||agent:agent.move||`` を使って、エージェントに `12` 本の丸太を壊すプログラムを書いてください。**
 
 ```diffspy
 for (let count = 0; count < 12; count++){
-    // Code to be repeated
+    // 繰り返すコード
     player.say("Hi")
 }
 -------------------------
@@ -84,8 +84,8 @@ for (let count = 0; count < 12; count++){
 }
 ```
 
-## Finish taking down the tree
+## 木を倒し終えよう
 
-Great!
+いいですね！
 
-With one length of logs removed, move your agent to the bottom of each log and remove them all. Good luck!
+丸太を 1 列分取り除けたら、エージェントを各丸太の根元に移動させて、すべて取り除いてください。頑張って！

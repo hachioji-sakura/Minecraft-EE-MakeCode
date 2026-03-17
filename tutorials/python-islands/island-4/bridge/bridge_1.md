@@ -8,7 +8,7 @@
 agent.teleport(world(935,150,627), WEST)
 ```
 
-# Bridge
+# 橋
 ```template
 
 while(== AIR) {
@@ -18,13 +18,13 @@ while(== AIR) {
 player.say("I've reached the end")
 ```
 
-## Getting started with the `while` loop @showdialog
+## `while` ループの基本 @showdialog
 
-In Island 3, you were introduced to `||loops:for||` loops. On this island, you're going to get to grips with the other type of loop, the `||loops:while||` loop. You use this if you don't know how many times you are going to loop for.
+アイランド 3 では `||loops:for||` ループを紹介しました。この島では、もう一つのループである `||loops:while||` ループを使いこなします。何回繰り返すかわからないときに使います。
 
 
 
-Here's an example of a `||loops:while||` loop
+`||loops:while||` ループの例です。
 
 ```python
 
@@ -34,32 +34,32 @@ while condition_1 == condition_2:
 
 ```
 
-The code above will run **as long as** the condition is met, just like `||logic:if||` statements, we use conditions for `||loops:while||` loops. We use these conditions to check if we should stop looping.
+上のコードは、条件が満たされている**限り**実行されます。``||logic:if||`` 文と同様に、``||loops:while||`` ループでも条件を使います。ループを止めるかどうかを、この条件で判断します。
 
-## Bridging the gap @showdialog
+## 距離に橋をかける @showdialog
 
 ![Bridging the gap](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/bridge/blind.jpg)
 
 
-**Mine Manager** - "*Could you and your Agent build a bridge through the fog and investigate what might be over there?*"
+**鉱山マネージャー** - 「*君とエージェントで霧の中に橋を架けて、向こうに何があるか調べてくれないか？*」
 
-To begin, you'll need to get your agent to run a while loop, to see if it has reached another landmass (island).    
-To do this, you can have your Agent check if the block in front of it is `AIR` and if so, the we can move forward (inside the `||loops:while||` loop).    
-When your Agent gets to another landmass, the block in front will no longer be `AIR`, so you can stop.
+まず、エージェントに while ループを実行させ、別の陸地（島）に着いたかどうかを確認する必要があります。
+そのために、エージェントの前のブロックが `AIR` かどうかをチェックし、そうなら（`||loops:while||` ループの中で）前に進むようにできます。
+別の陸地に着くと、前のブロックはもう `AIR` ではなくなるので、ループを止められます。
 
-## Step 1
-To do this you can use `||agent:agent.inspect||` as part of the `||loops:while||` loop:
+## ステップ 1
+`||loops:while||` ループの条件に ``||agent:agent.inspect||`` を使います。
 
-Finish the `||loops:while||` loop by adding  `||agent:agent.inspect||`, so that the agent checks if the block in the direction `FORWARD` is air.
+`FORWARD` 方向のブロックが空気かどうかをエージェントがチェックするように、``||loops:while||`` ループに ``||agent:agent.inspect||`` を追加して完成させてください。
 
 ```python-ignore
 while (agent.inspect(AgentInspection.BLOCK, FORWARD) == AIR):
     agent.move()
 ```
 
-## Step 2
+## ステップ 2
 
-Next, we need to move the agent forward each time. Update the `||agent:agent.move||` line to go `FORWARD` 1 block at a time.
+次に、毎回エージェントを前に進める必要があります。``||agent:agent.move||`` の行を、1 回に 1 ブロック `FORWARD`（前）に進むように更新してください。
 
 ```python
 while (agent.inspect(AgentInspection.BLOCK, FORWARD) == AIR):
@@ -67,21 +67,21 @@ while (agent.inspect(AgentInspection.BLOCK, FORWARD) == AIR):
 ```
 
 
-## Bridging the gap @showdialog
+## 距離に橋をかける @showdialog
 
 ![Bridging the gap](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/bridge/blind.jpg)
 
-**Mine Manager** - "*I've given your agent some **stone** (in slot 1), to build a bridge over to the island. Can you place the stone blocks below the agent, to form a bridge until it reaches the island in the distance and no longer has air in front of it?*"
+**鉱山マネージャー** - 「*島まで橋を架けるために、エージェントに**石**（スロット 1）を渡した。エージェントの下に石ブロックを置いて、向こうの島に着いて前が空気でなくなるまで橋を作ってくれないか？*」
 
 
-## Step 3
-Now that you have your agent moving for as long as the loop is running, we need to place blocks down to bridge over to the other island.    
+## ステップ 3
+ループが動いている間、エージェントを動かせるようになったので、向こうの島までブロックを置いて橋を架けます。
 
-To do this, we can use `||agent:agent.set_slot||` and `||agent:agent.place||` to place down blocks.
+そのために `||agent:agent.set_slot||` と `||agent:agent.place||` でブロックを置けます。
 
-Don't forget you can use your whistle to call your agent back so that you can run your completed code.
+完成したコードを実行するために、ホイッスルでエージェントを呼び戻せることを忘れないでください。
 
-**Have your agent place stone blocks (from slot 1) `DOWN` below itself. Then investigate the other island!**
+**エージェントに石ブロック（スロット 1）を自分の `DOWN`（下）に置かせてください。そして向こうの島を調査しましょう！**
 
 
 ```python
@@ -89,6 +89,6 @@ agent.set_slot(slot_id)
 agent.place(DIRECTION)
 ```
 
-- `slot_id`: The slot number in the agent's inventory that we want to select (so we can place blocks from it).
+- `slot_id`: 選択するエージェントのインベントリのスロット番号（そこからブロックを置く）。
 
-- `DIRECTION`: The direction we want the agent to place a block. The directions you can use are: FORWARD, BACK, LEFT, RIGHT, UP, DOWN.
+- `DIRECTION`: エージェントがブロックを置く方向。使える方向は FORWARD、BACK、LEFT、RIGHT、UP、DOWN です。

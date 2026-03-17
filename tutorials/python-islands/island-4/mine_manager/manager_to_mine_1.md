@@ -4,24 +4,24 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go To Mine
+# 鉱山へ行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Head to the Diamond Mine @showdialog
+## ダイヤモンド鉱山へ向かおう @showdialog
 
 ![Diamond Mine](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/mine_manager/Mine.jpg)
 
-Thank you for bringing me the dye.
+染料を届けてくれてありがとう。
 
-Now, all we need to finish the airship are some diamonds.
+飛行船を完成させるには、あとダイヤモンドがいくつか必要だ。
 
-Could you get me some from the mine?
+鉱山から取ってきてもらえないか？
 
 ```spy
 ```

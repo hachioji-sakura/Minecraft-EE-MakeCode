@@ -4,7 +4,7 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Autominer
+# オートマイナー（Autominer）
 
 ```customts
 const CAVE_LAVA = 11
@@ -12,55 +12,56 @@ const CAVE_LAVA = 11
 agent.teleport(world(-440, 145, 669), SOUTH)
 ```
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-In this exercise, you will build a program in Python that follows the flowchart below.
+この演習では、下のフローチャートに従う Python プログラムを作成します。
 
-Have the agent create a mineshaft for you to work in. Following the program flowchart below, create a Python program that uses your agent to:
-Mine a tunnel 2 blocks tall in front of it.
-Checks if there's lava below itself, if so
-Place a block below
+エージェントに、作業用の採掘坑道（mineshaft）を作らせましょう。以下のフローチャートに従って、次のようなエージェント用の Python プログラムを作成します。
+
+- エージェントの前方に高さ 2 ブロックのトンネルを掘る  
+- 自分の真下に溶岩があるかチェックし、あれば  
+- 足元にブロックを置く
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/autominer/images/Flowchart.png)
 
-## Part 1
+## パート 1
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/autominer/images/flowchart-landscape_1.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
 ```python
 ```
-Give your agent 64 stone.
+エージェントに丸石（STONE）を 64 個渡してください。
 
-## Part 2
+## パート 2
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/autominer/images/flowchart-landscape_2.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
 ```
 ```
-Create a for loop that iterates from 0 to 19.
+0 から 19 まで繰り返す for ループを作成してください。
 
-## Part 3
+## パート 3
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/autominer/images/flowchart-landscape_3.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
 ```
 ```
-Within the loop; destroy the block in front of the agent, move the agent forward one block, then destroy the block above the agent.
+ループの中で、エージェントの前のブロックを壊し、エージェントを 1 ブロック前に移動し、その後エージェントの上のブロックを壊してください。
 
 
-## Part 4
+## パート 4
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/autominer/images/flowchart-landscape_4.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
-**Note: Use `CAVE_LAVA` to detect the lava that you could find while mining.**
+**注意：採掘中に見つかる溶岩を検知するために `CAVE_LAVA` を使ってください。**
 
 ```
 ```
-If the block below the agent is `CAVE_LAVA`, place a stone block below the agent.
+エージェントの下のブロックが `CAVE_LAVA` なら、エージェントの足元に丸石ブロックを置いてください。
 
 
 ```ghost

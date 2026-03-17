@@ -4,22 +4,22 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go to the Dig Site
+# 発掘現場へ行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Artefact hunting @showdialog
+## 遺物を探そう @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/misc/From_Plant_To_Dig.png)
 
-For your next task, the Prime Minister has asked for artefact to be on-board the rocket. You should be able to find some at the Underground Dig Site.
+次の任務として、首相はロケットに遺物を積むよう頼んでいる。地下発掘現場で見つかるはずだ。
 
-*Note: to access the dig site, return to the main island across the bridge, then turn right.*
+*注意：発掘現場へ行くには、橋を渡ってメインの島に戻り、右に曲がってください。*
 
 
 ```spy

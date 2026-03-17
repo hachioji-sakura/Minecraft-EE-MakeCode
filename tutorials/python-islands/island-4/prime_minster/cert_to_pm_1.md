@@ -4,25 +4,25 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Delivery the Certificate
+# 証明書を届ける
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Deliver the Certificate of Airworthiness @showdialog
+## 耐空証明書を届けよう @showdialog
 
 ![PM With certificate of airworthiness](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/prime_minster/Cert_Cover.jpg)
 
-One of my staff has informed me that you've got the Certificate of Airworthiness for the new airship.
+スタッフから、君が新しい飛行船の耐空証明書を手に入れたと聞いた。
 
-Please deliver the Certificate to me as possible please.
+できるだけ早く、その証明書を私に届けてほしい。
 
 
-**Prime Minister**
+**首相**
 
 ```spy
 ```

@@ -4,12 +4,12 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Bounce
+# バウンス（跳ね）
 
 ```customts
 namespace blocks {
     /**
-    * Check if a block is under a position
+    * 指定した位置の下にブロックがあるかチェックする
     */
     //% block"Is the block %block under %pos"
     //% block.defl=SLIME_BLOCK
@@ -26,40 +26,40 @@ namespace blocks {
 }
 ```
 
-## Finish the Telescope @showdialog
+## 望遠鏡を完成させよう @showdialog
 
-The new telescope has been put up, but they need to attach the final beacon to complete the build. Can you jump up and place it?
+新しい望遠鏡は設置されたが、建造を完了するために最後のビーコンを取り付ける必要がある。跳ね上がって設置できるか？
 
-To help you jump a little higher, you will learn how to "levitate" to give you a bit of an extra boost, each time you bounce!
+少し高く跳べるように、「浮遊」のやり方を学んで、バウンスするたびにちょっとしたブーストを得よう！
 
 ![Image of telescope build](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/bounce/cover.jpg)
 
-## Step 1
+## ステップ 1
 
-First you'll need to create a function that will be triggered when we bounce. To do this we'll first create a function called `on_player_bounced()`
+まず、バウンスしたときに実行される関数を作る必要がある。そのために、`on_player_bounced()` という関数を作る。
 
-** Create a function called `on_player_bounced()`**
+**`on_player_bounced()` という関数を作成してください。**
 
 ```python
 def on_player_bounced():
-    # Code will go here later
+    # 後でここにコードを書く
     pass
 ```
 
-## Step 2
+## ステップ 2
 
-Now we have a function we need to know where the place was when the function was triggered, to do this we'll add a *variable* called `loc` and assign it ``||player:player.position()||``.
+関数ができたので、関数が実行されたときのプレイヤーの位置を知る必要がある。そのために、`loc` という*変数*を追加し、``||player:player.position()||`` を代入する。
 
 ```python
 def on_player_bounced():
     loc = player.position()
 ```
 
-## Step 3
+## ステップ 3
 
-We only want to give the helping boost when we've bounced on slime block. To do this, the builders have given you a special function called ``||blocks:blocks.is_under()||`` which takes two inputs, first a block type, such as `SLIME_BLOCK` and the second being the location under we want to check.
+スライムブロックの上でバウンスしたときだけ、ブーストの手助けをしたい。そのために、建築業者が ``||blocks:blocks.is_under()||`` という特別な関数を用意してくれた。2 つの入力を受け取る。1 つ目は `SLIME_BLOCK` のようなブロックの種類、2 つ目は調べたい位置の下の場所だ。
 
-**After the `loc` you added in the last step add in a new variable called `block_under` and set it to ``||blocks:blocks.is_under()||`` passing in the two variables `SLIME_BLOCK` and our variable `loc`**.
+**前のステップで追加した `loc` の後に、`block_under` という新しい変数を追加し、``||blocks:blocks.is_under()||`` に `SLIME_BLOCK` と変数 `loc` の 2 つを渡した結果を代入してください。**
 
 ```python
 def on_player_bounced():
@@ -67,27 +67,27 @@ def on_player_bounced():
     block_under = blocks.is_under(SLIME_BLOCK, loc)
 ```
 
-## Step 4
+## ステップ 4
 
-Now we want to use a ``||logic:if||`` statement to check if the variable `block_under` we set in the last step is `True`.
+前のステップで設定した変数 `block_under` が `True` かどうかを、``||logic:if||`` 文でチェックしたい。
 
-** Create an ``||logic:if||`` for when `block_under` is `True`**
+**`block_under` が `True` のときの ``||logic:if||`` を作成してください。**
 
 ```python
 def on_player_bounced():
     loc = player.position()
     block_under = blocks.is_under(SLIME_BLOCK, loc)
     if block_under == True:
-        # We'll add some code here in the next step
+        # 次のステップでここにコードを追加する
 ```
 
-## Step 5
+## ステップ 5
 
-If the ``||logic:if||`` statement is `True` we first need to need to know our `target`, to do this, we can variable for the `target` of who will be affected by our levitate effect.
+``||logic:if||`` が `True` なら、まず `target`（浮遊効果がかかる対象）を知る必要がある。
 
-For this we can use ``||mobs:mobs.target(NEAREST_PLAYER)||`` to find the nearest play, (you) to apply the effect onto.
+そのために ``||mobs:mobs.target(NEAREST_PLAYER)||`` で、効果をかける最も近いプレイヤー（君）を見つけられる。
 
-**To do this lets create a new variable called `target` and we can use ``||mobs:mobs.target(NEAREST_PLAYER)||``**
+**`target` という新しい変数を作り、``||mobs:mobs.target(NEAREST_PLAYER)||`` を代入してください。**
 
 ```python
 def on_player_bounced():
@@ -97,13 +97,13 @@ def on_player_bounced():
         target = mobs.target(NEAREST_PLAYER)
 ```
 
-## Step 6
+## ステップ 6
 
-Now we know our `target` we can use ``||mobs:mobs.apply_effect()||`` to apply the effect.
+`target` がわかったので、``||mobs:mobs.apply_effect()||`` で効果をかけられる。
 
-To this we want to pass it in 4 parameters, first the affect we want to use, which is `LEVITATION`. Second is the target, which will be `target` variable we set in the last step. Third is the duration the effect lasts for of `1` second, and finally is amplifier which is how strong we want the effect to be.
+4 つの引数を渡す。1 つ目は使う効果で `LEVITATION`（浮遊）。2 つ目は前のステップで設定した `target`。3 つ目は効果の持続時間で `1` 秒。4 つ目は amplifier（強さ）で、効果の強さを指定する。
 
-**Add ``||mobs:mobs.apply_effect()||`` to run if it's `True`**
+**`True` のときに ``||mobs:mobs.apply_effect()||`` が実行されるように追加してください。**
 
 ```python
 def on_player_bounced():
@@ -114,18 +114,18 @@ def on_player_bounced():
         mobs.apply_effect(LEVITATION, target, 1, 10)
 ```
 
-## Step 7
+## ステップ 7
 
-The final step is to make sure the game triggers our code when we travel, to do this we can use ``||player:player.on_travelled()||``. This two parameters the mode of travel which is `BOUNCE` for us to get up onto the telescope, and the second being the name of the function we want to trigger.
+最後に、移動したときにゲームがこのコードを実行するようにする。そのために ``||player:player.on_travelled()||`` が使える。2 つの引数を取る。1 つ目は移動の種類で、望遠鏡に上がるには `BOUNCE`。2 つ目は実行したい関数の名前。
 
-**At the end of your code outside of the function we created add in ``||player:player.on_travelled()||`` with the parameters of `BOUNCE` and the name of our function `on_player_bounced` that we made**
+**作った関数の外、コードの最後に、``||player:player.on_travelled()||`` を追加し、引数に `BOUNCE` と作った関数 `on_player_bounced` の名前を渡してください。**
 
-## Place the beacon!
+## ビーコンを設置しよう！
 
-Nice! Now that you have the code complete. Test it out and see if you can get onto the antenna to place the beacon!
+コードができたら試して、アンテナに上ってビーコンを設置できるか見てみよう！
 
-*Note - You can modify the duration and amplifier for the `LEVITATION` effect if you are finding the jumping is a little difficult.*
+*注意 - 跳びにくい場合は、`LEVITATION` 効果の持続時間と amplifier を変更してもよい。*
 
 ![Bounce path](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/bounce/bounce_path.jpg)
 
-*Above is the recommended bouncing path.*
+*上はおすすめのバウンス経路です。*

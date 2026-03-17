@@ -5,20 +5,20 @@
 ### @codeStop players set @s codeExecution 0
 ### @explicitHints true
 
-# Ice Walker
+# アイスウォーカー（Ice Walker）
 
 ```customts
 const LAKE_WATER = 9
 ```
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-In this exercise, you will build a program in Python that follows the flowchart below.
+この演習では、下のフローチャートに従う Python プログラムを作成します。
 
-In Minecraft, there are many vast lakes or oceans to traverse. Following the program flowchart below, create a Python program that:
+Minecraft では、広大な湖や海を横断する必要がよくあります。以下のフローチャートに従って、次のような Python プログラムを作成してください。
 
-- Loops continuously.
-- Changes the blocks surrounding the player from LAKE_WATER to ICE.
+- 永続的にループする  
+- プレイヤーの周囲のブロックを LAKE_WATER から ICE に変える
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/ice_walker/images/Flowchart.png)
 
@@ -27,21 +27,21 @@ In Minecraft, there are many vast lakes or oceans to traverse. Following the pro
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/ice_walker/images/Flowchart.png)
 
-You should also set the blocks around the player to ICE. (Not just the block below).
-You should use positions relative to yourself using `||positions:pos||`.
+足元だけでなく、プレイヤーの周囲のブロックも ICE に設定する必要があります。  
+`||positions:pos||` を使って、自分を基準にした相対座標を使用してください。
 
-**Note: You need to create a box around your feet of ice (-1 and 1 coordinates). You will need to change the pair of coordinates in the replace method (more details in the hint).**
+**注意：足元のまわりに ICE の箱（-1 ～ 1 の座標）を作る必要があります。`blocks.replace` メソッド内の座標ペアを変更する必要があります（詳しくはヒントを参照）。**
 
 ### ~ tutorialhint
-**Tips**
-- Watch out! The replace method expects the new block (ICE), then the old block (LAKE_WATER).
-- Unsure about the coordinates to use? Check the below diagram.
+**ヒント**
+- 注意！`blocks.replace` メソッドは、新しいブロック（ICE）、次に置き換え対象の古いブロック（LAKE_WATER）の順で指定します。
+- どの座標を使えばよいか分からない場合は、下の図を確認してください。
 ![Player coords](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/ice_walker/images/player_coords.jpg)
 
-**Starter code**
+**スターターコード**
 ```python
 def on_forever():
-    # Your code here
+    # ここにコードを書く
     pass
 loops.forever(on_forever)
 ```

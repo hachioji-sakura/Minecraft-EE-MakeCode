@@ -4,7 +4,7 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Tower Builder
+# タワービルダー（Tower Builder）
 
 ```customts
 agent.teleport(world(-517, 139, 712), WEST)
@@ -29,26 +29,26 @@ function create_layer(): void{
 }
 ```
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-As an explorer, you need to be able to trace your steps to return to your base. In this exercise, you will build a program in Python that creates a tower by following two separate flowcharts:
+探検家として、基地に戻るために自分の足跡をたどれることは重要です。この演習では、2 つのフローチャートに従って塔を作る Python プログラムを作成します。
 
-- The first flowchart shows a function which creates a layer.
-- The second flowchart uses this function to create a tower then glowstone is placed at the top of the tower.
+- 1 つ目のフローチャートは、1 層分の塔を作る関数を示しています。  
+- 2 つ目のフローチャートは、この関数を使って塔を積み上げ、塔の頂上にグロウストーンを配置します。
 
-### Layer Function
+### レイヤー関数
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-function.png)
 
-### Main Flowchart
+### メインフローチャート
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart.png)
 
-## Function - Part 1
+## 関数 - パート 1
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape-function_1.png)
 
-Define the function provided to match the boxes in black.
+黒いボックスに一致するように、用意された関数を定義します。
 
 ```python
 def create_layer():
@@ -56,80 +56,80 @@ def create_layer():
         pass
 ```
 
-- Within the function named create_layer, create a for loop that **loops 4 times**
+- `create_layer` という名前の関数の中で、**4 回ループする** for ループを作成してください。
 
-## Function - Part 2
+## 関数 - パート 2
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape-function_2.png)
 
-Add to your function, within the loop, to make it match the flowchart.
+フローチャートに合うように、関数の中のループにコードを追加してください。
 
 ```
 ```
 
-- Place a stone (slot 1) down
-- Move the agent forwards
+- 石（スロット 1）を下に置く  
+- エージェントを前に動かす
 
-## Function - Part 3
+## 関数 - パート 3
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape-function_3.png)
 
-Add to your function, within the loop, to make it match the flowchart.
+フローチャートに合うように、関数の中のループにさらにコードを追加してください。
 
 ```
 ```
 
-- Place a stone (slot 1) down
-- Move the agent forwards
-- Turn your agent right
+- 石（スロット 1）を下に置く  
+- エージェントを前に動かす  
+- エージェントを右に回転させる
 
-## Main Code - Part 1
+## メインコード - パート 1
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape_1.png)
 
-Now below the function you have just created, code the piece of the flowchart shown in black.
+作成した関数の下に、フローチャートの黒い部分に対応するコードを書いてください。
 
 ```
 ```
 
-- Give the agent 64 stone (slot 1)
-- Give the agent 1 glowstone (slot 2)
+- エージェントに石を 64 個（スロット 1）渡す  
+- エージェントにグロウストーンを 1 個（スロット 2）渡す
 
-## Main Code - Part 2
+## メインコード - パート 2
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape_2.png)
 
-Now create the loop shown in black.
+黒い部分に示されたループを作成してください。
 
 ```
 ```
 
-- Create a loop that loops 3 times (the height of your tower)
+- 塔の高さ（3 段）ぶん、3 回ループするループを作成する。
 
-## Main Code - Part 3
+## メインコード - パート 3
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape_3.png)
 
-Complete the loop with the code shown in black.
+黒い部分に示されたコードでループを完成させてください。
 
 ```
 ```
 
-- Move your agent up one block
-- Run the function you previously created
+- エージェントを 1 ブロック上に移動させる  
+- 先ほど作成した関数を実行する
 
-## Main Code - Part 4
+## メインコード - パート 4
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/tower_builder/images/flowchart-landscape_4.png)
 
-Code the part of the flowchart shown in black to place glowstone at the top of your tower.
+塔の頂上にグロウストーンを置くために、フローチャートの黒い部分に対応するコードを書いてください。
 
 ```
 ```
 
-- Move your agent right
-- Set active slot to 2
-- Place glowstone forwards
+- エージェントを右に移動させる  
+- アクティブなスロットを 2 に設定する  
+- 前方にグロウストーンを置く
 
 ```ghost
 def create_layer():

@@ -4,34 +4,34 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Factory
-Repair the airship
+# 工場
+飛行船を修理する
 
 
-## Repair the Hull @showdialog
+## 船体を修理する @showdialog
 
 ![Airship Factory](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/factory/cover.jpg)
 
-It looks like the crew at the airship factory need a hand repairing one of their new airships. Send your Agent in to fix the holes!
+飛行船工場のクルーが、新しい飛行船の修理を手伝ってほしいようです。エージェントを送って穴を塞いでください！
 
 
-Before we get started, close this window and find your agent, it should be inside the airship.   
+始める前に、このウィンドウを閉じてエージェントを探してください。飛行船の中にいるはずです。
 
-## Step 1
-Now you have found your agent, let's move the agent forward by one block, to have it hover over the first hole for repair.
+## ステップ 1
+エージェントを見つけたら、修理する最初の穴の上に浮かぶように 1 ブロック前に移動させましょう。
 
-**Write the code to move your agent forward.**
+**エージェントを前に移動させるコードを書いてください。**
 
 ```python
 agent.move(FORWARD, 1)
 ```
 
-## Step 2
-Now with the agent in place, we'll need to move the agent down to the bottom of the docks to collect the fallen blocks below.   
+## ステップ 2
+エージェントが配置できたので、ドックの底まで下げて、落ちたブロックを回収する必要があります。
 
-To do this, we will use a while loop that moves the agent down, only running as long as there is air below it.   
+そのために、エージェントの下が空気の間だけ下に移動する while ループを使います。
 
-**Change your code, using a `||loops:while||` loop and `||agent:agent.inspect||` in the DOWN direction, to make your agent go down until the block is not `AIR`.**
+**`||loops:while||` ループと DOWN 方向の ``||agent:agent.inspect||`` を使って、ブロックが `AIR` でなくなるまでエージェントを下に移動させるようにコードを変更してください。**
 
 ```python
 while agent.inspect(AgentInspection.BLOCK, DOWN) == AIR:
@@ -39,31 +39,31 @@ while agent.inspect(AgentInspection.BLOCK, DOWN) == AIR:
 ```
 
 
-## Step 3
-As the agent is at the bottom of the dock, it can collect the blocks that have broken and fallen down. You can see where these blocks are by using the viewing gallery below the airship.
-To collect blocks, use the `||agent:agent.collect_all()||` function.
+## ステップ 3
+エージェントがドックの底にいるので、壊れて落ちたブロックを回収できます。飛行船の下の見学廊下からブロックの位置を確認できます。
+ブロックを回収するには `||agent:agent.collect_all()||` 関数を使います。
 
-**Change your code to collect all the items near your agent.**
+**エージェントの近くのアイテムをすべて回収するようにコードを変更してください。**
 
 ```python
 agent.collect_all()
 ```
 
 
-## Getting Your Agents Position @showdialog
-With the agent now holding onto the block to repair the airship with, we need to move it back to the correct position, to replace the block.
-The Factory worker told you that the `y` coordinate to repair is at `157`.
-To get the coordinates of the agent use:
+## エージェントの位置を取得する @showdialog
+修理用のブロックを持ったエージェントを、ブロックを置き直す正しい位置まで戻す必要があります。
+工場の作業員から、修理する y 座標は `157` だと聞きました。
+エージェントの座標を取得するには：
 ```python
 agent.get_position()
 ```
-To get the `y` coordinate from this position use:
+この位置から y 座標を取得するには：
 ```python
 agent.get_position().get_value(Axis.Y)
 ```
 
-## Step 4
-Use a `||loops:while||` loop, `||agent:agent.get_position()||` and `||positions:.get_value(AXIS.Y)||` to loop, running  `||agent:agent.move(UP)||`, until the agents `y` coordinate is `157`.
+## ステップ 4
+`||loops:while||` ループと ``||agent:agent.get_position()||``、``||positions:.get_value(AXIS.Y)||`` を使って、エージェントの y 座標が `157` になるまで ``||agent:agent.move(UP)||`` を繰り返してください。
 
 
 ```python
@@ -71,22 +71,22 @@ while agent.get_position().get_value(Axis.Y) != 157:
     agent.move(UP, 1)
 ```
 
-## Placing Blocks @showdialog
-Now that the agent is at the correct y (altitude) coordinate, you can place the block that your agent just collected, using the `||agent:agent.set_slot||` and `||agent:agent.place||` functions.
+## ブロックを置く @showdialog
+エージェントが正しい y（高度）座標に来たので、`||agent:agent.set_slot||` と `||agent:agent.place||` で、今回収したブロックを置けます。
 
-Here's a reminder on how to use those functions...
+これらの関数の使い方のおさらいです…
 
 ```python
 agent.set_slot(SLOT_NUMBER)
 agent.place(DIRECTION)
 ```
 
-- `SLOT_NUMBER`: The slot the agent should select (to place blocks from).
+- `SLOT_NUMBER`: エージェントが選択するスロット（ブロックを置く元）。
 
-- `DIRECTION`: The direction that your agent will try to place a block. The directions you can use are: FORWARD, BACK, LEFT, RIGHT, UP, DOWN.
+- `DIRECTION`: エージェントがブロックを置く方向。使える方向は FORWARD、BACK、LEFT、RIGHT、UP、DOWN です。
 
-## Step 5
-Use `||agent:agent.set_slot||` and `||agent:agent.place||` functions to place a block from slot number `1` in the `DOWN` direction.
+## ステップ 5
+`||agent:agent.set_slot||` と `||agent:agent.place||` を使って、スロット番号 `1` のブロックを `DOWN`（下）方向に置いてください。
 
 
 ```python

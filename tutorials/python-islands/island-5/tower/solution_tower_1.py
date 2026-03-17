@@ -3,5 +3,5 @@ def build_tower():
         agent.move(UP, 1)
         agent.draw_square(3)
 
-# Write your code above this line
+# この行の上にコードを書いてください
 telescope.start_building()

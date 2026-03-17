@@ -4,20 +4,20 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Head to the Castle!
+# 城へ向かおう！
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Bring the Crown and Robe to the king @showdialog
+## 王冠とローブを王様に届けよう @showdialog
 
 ![Castle](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/wizard/castle.jpg)
 
-Head to the castle to bring the king his new crown and robe.
+城へ行き、王様に新しい王冠とローブを届けてください。
 
 
 ```spy

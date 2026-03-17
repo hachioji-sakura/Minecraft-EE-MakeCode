@@ -4,12 +4,12 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Dig
+# 発掘（Dig）
 
 ```customts
 namespace agent {
     /**
-    * Your agent checks if there is a fossil below.
+    * エージェントの下に化石があるかチェックする
     */
     //% block
     export function isFossilBelow(): boolean {
@@ -19,12 +19,12 @@ namespace agent {
 }
 
 /**
- * Scientist
+ * 科学者
  */
 //% color=purple weight=100 icon="\uf0c3" block="Scientist"
 namespace scientist {
     /**
-    * A scientist will check if your list contains all the fossils.
+    * 科学者がリストにすべての化石が含まれているかチェックする
     */
     //% block
     export function check(final: any[]): void {
@@ -52,43 +52,44 @@ namespace scientist {
 }
 ```
 
-## Dig for Dinosaurs @showdialog
-Recently, the island archaeology team have discovered some pre-historic artifacts. Use your Agent to find the ancient fossils hidden below the ground!
+## 恐竜を発掘しよう @showdialog
+最近、島の考古学チームが先史時代の遺物を発見した。エージェントを使って、地面の下に隠れた古代の化石を探そう！
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/dig/cover.png)
 
-## Lists @showdialog
-Your agent will be locating the fossils using its powerful sensors, then passing on the location of each to the archaeological team to excavate.      
+## リスト @showdialog
+エージェントは強力なセンサーで化石の位置を特定し、それぞれの位置を発掘チームに伝える。
 
-To do this, it will store each fossil location in a list, which can be handed over to the team once your survey is complete.   
+そのために、化石の位置をリストに格納し、調査が終わったらチームに渡す。
 
-Here's a reminder on how to create a list...
+リストの作り方のおさらい…
 
 `||agent:agent.is_fossil_below()||`
 
 ```python
 
-my_list = [] # This is an empty list, with no items
+my_list = [] # 空のリスト（要素がない）
 
 ```
 
-## Create an Empty List
-**Create an empty list called coordinates that you can later add the positions of fossils to.**
+## 空のリストを作る
+**後で化石の位置を追加できる、`coordinates` という空のリストを作成してください。**
 
 ```python
 coordinates = []
 ```
 
-## Create Some For Loops
-We can use two for loops to cover a 2D space, so that we can check for fossils.
+## for ループをいくつか作る
+2 つの for ループで 2 次元の範囲をカバーし、化石をチェックできる。
 
 for var in range(start, stop):
 
-**Add two `||loops:for||` loops, one inside the other, that both iterate from 0 to 3.**
+**0 から 3 まで繰り返す 2 つの ``||loops:for||`` ループを、一方をもう一方の中に書いてください。**
 
-**The outer loop should use the variable `row` and the inner loop should use the variable `col`, for column**
+**外側のループは変数 `row`、内側のループは列用に変数 `col` を使ってください。**
 
-**Add a say command so you can see the values of `row` and `col`, to make sure your program is working as expected.**
+**プログラムが想定どおり動いているか確認するため、`row` と `col` の値を表示する say コマンドを追加してください。**
+
 ```python
 coordinates = []
 
@@ -98,12 +99,12 @@ for row in range(0, 4):
         player.say(col)
 ```
 
-## Move Your Agent
-To scan the whole area your agent will need to move.
+## エージェントを動かす
+エリア全体をスキャンするにはエージェントを動かす必要がある。
 
-**Within the inner loop, use `||agent:agent.move||` to move your agent forward 1 block. After each time the inner loop has run you need to move your agent back 3 blocks then left 1 block so you can scan the next row.**
+**内側のループの中で、``||agent:agent.move||`` でエージェントを 1 ブロック前に移動させてください。内側のループが 1 回終わるたびに、エージェントを 3 ブロック後ろに、それから 1 ブロック左に移動させ、次の行をスキャンできるようにしてください。**
 
-**Outside of both loops you need to return your agent to the start so the agent can scan from the start agent, to do this move your agent to the right by 3 after both loops.**
+**両方のループの外で、エージェントを開始位置に戻して最初からスキャンできるようにするため、両方のループの後にエージェントを右に 3 ブロック移動させてください。**
 
 ```python
 coordinates = []
@@ -118,10 +119,10 @@ for row in range(0, 4):
 agent.move(RIGHT, 3)
 ```
 
-## Appending to lists @showdialog
-To add something to the end of a list you need to use the `||arrays:append||` operator.
+## リストへの追加 @showdialog
+リストの末尾に何かを追加するには `||arrays:append||` を使う。
 
-For example if you wanted to add your agent's coordinates to the coordinates list you would do this:
+例えばエージェントの座標を coordinates リストに追加するなら、こうする：
 
 ```python
 agent_pos = agent.get_position()
@@ -133,12 +134,12 @@ if agent.is_fossil_below():
     scientist.check([])
 ```
 
-## Check for fossils
-You need to mark the fossils for the scientists.
+## 化石をチェックする
+科学者向けに化石に印をつける必要がある。
 
-**Before you move your agent in the inner loop check for a fossil below your agent. To do this use `||agent:agent.is_fossil_below||`. If there is a fossil, add your agent's coordinates to the list.**
+**内側のループでエージェントを動かす前に、エージェントの下に化石があるかチェックしてください。そのために ``||agent:agent.is_fossil_below||`` を使う。化石があれば、エージェントの座標をリストに追加する。**
 
-**At the end of your code `||scientist:scientist.check(coordinates)||` to check your list and finish the task.**
+**コードの最後で ``||scientist:scientist.check(coordinates)||`` を呼んでリストをチェックし、任務を完了してください。**
 
 ```python
 if agent.is_fossil_below():

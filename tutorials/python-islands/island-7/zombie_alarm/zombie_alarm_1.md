@@ -4,27 +4,27 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Zombie Alarm
+# ゾンビアラーム（Zombie Alarm）
 
-## Introduction @showdialog
+## はじめに @showdialog
 
-In this exercise, you will build a program in Python that follows the flowchart below.
+この演習では、下のフローチャートに従う Python プログラムを作成します。
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/zombie_alarm/images/flowchart.png)
 
-Zombies are always an issue, in this exercise build a system that can alert everyone to the presence of any zombies that have spawned!
+ゾンビはいつでも厄介な存在です。この演習では、スポーンしたゾンビの存在をみんなに知らせるシステムを作りましょう！
 
-Following the program flowchart below, create a Python program that:
+以下のフローチャートに従って、次のような Python プログラムを作成します。
 
-- Check if zombie has spawns and if true:
-    - Plays thunder sound
-    - Whispers to all players
+- ゾンビがスポーンしたかをチェックし、スポーンしていれば:
+    - 雷のサウンドを再生する
+    - すべてのプレイヤーにささやきメッセージを送る
 
-## Part 1
+## パート 1
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/zombie_alarm/images/flowchart-landscape_1.png)
 
-Code the part of the flowchart shown in black.
+フローチャートの黒い部分に対応するコードを書きます。
 
 ```python
 def on_entity_spawned(mob, spawner):
@@ -32,19 +32,19 @@ def on_entity_spawned(mob, spawner):
 events.on_entity_spawned(on_entity_spawned)
 ```
 
-- Create a function that is called when a mob spawns
+- モブがスポーンしたときに呼び出される関数を作成する
 
-## Part 2
+## パート 2
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/zombie_alarm/images/flowchart-landscape_2.png)
 
-Code the part of the flowchart shown in black.
+フローチャートの黒い部分に対応するコードを書きます。
 
 ```
 ```
 
-- If the mob is a zombie, play the thunder sound and send a message to the chat
-- Otherwise ignore the mob spawn
+- モブがゾンビであれば、雷のサウンドを再生し、チャットにメッセージを送る
+- それ以外のモブのスポーンは無視する
 
 ```ghost
 def on_entity_spawned(mob, spawner):

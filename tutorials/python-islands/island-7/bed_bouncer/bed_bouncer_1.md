@@ -4,34 +4,34 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Bed Bouncer
+# ベッドバウンサー（Bed Bouncer）
 
-## Introduction @showdialog
-Don't you love bouncing on a bed? Following the program flowchart below, create a Python program that:
+## はじめに @showdialog
+ベッドの上で跳ねるのは楽しいですよね？以下のプログラム用フローチャートに従って、次のことを行う Python プログラムを作成してください。
 
-- Check if player is bouncing above a bed, if so
-    - Apply Levitation
-    - Apply Regeneration
+- プレイヤーがベッドの上でバウンドしているかチェックし、そうであれば  
+    - 浮遊（Levitation）を付与する  
+    - 再生（Regeneration）を付与する
 
-Follow the flowchart below:
+下のフローチャートに従います。
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/bed_bouncer/images/Flowchart.png)
 
-## Part 1
+## パート 1
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/bed_bouncer/images/flowchart-landscape_1.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
 ```python
 ```
-Create a function that is called when the player `BOUNCE`'s.
+プレイヤーが `BOUNCE`（バウンド）したときに呼び出される関数を作成してください。
 
-## Part 2
+## パート 2
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/bed_bouncer/images/flowchart-landscape_2.png)
 
-Code the black part of the flowchart. Stuck? Check the hint. Press *Next* to move onto the next step.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。*Next* を押して次のステップへ進みます。
 
 ```python
 blocks.test_for_block(BED, player.position())
@@ -47,16 +47,16 @@ def on_jump():
 player.on_travelled(BOUNCE, on_jump)
 ```
 
-If the player is jumping on a bed, apply `LEVITATION` to the nearest player.
+プレイヤーがベッドの上でジャンプしている場合、最も近いプレイヤーに `LEVITATION` を付与してください。
 
-See above for some useful code.
+上のコードは参考として役立ちます。
 
-## Part 3
+## パート 3
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-7/bed_bouncer/images/flowchart-landscape_3.png)
 
-Code the black part of the flowchart. Stuck? Check the hint.
+フローチャートの黒い部分に対応するコードを書きます。行き詰まったらヒントを確認してください。
 
 ```python
 ```
-After applying `LEVITATION`, apply `REGENERATION` to the nearest player.
+`LEVITATION` を付与したあと、最も近いプレイヤーに `REGENERATION` を付与してください。

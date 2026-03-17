@@ -5,11 +5,11 @@
 ### @codeStop players set @s codeExecution 0
 
 
-# Runway
+# 滑走路
 ```customts
 namespace agent {
     /**
-    * Moves your agent back to the left-hand side of the runway.
+    * エージェントを滑走路の左端に戻す
     */
     //% block
     export function returnAgent(): void {
@@ -25,12 +25,12 @@ namespace agent {
 }
 
 /**
- * Runway
+ * 滑走路
  */
 //% color=purple weight=100 icon="\uf018" block="Runway"
 namespace runway {
     /** 
-    * Gets a list containing the runway design.
+    * 滑走路のデザインを含むリストを取得する
     */
     //% block
     export function getRunwayDesign(): boolean[][] {
@@ -55,25 +55,27 @@ for (const row of ) {
 }
 ```
 
-## Runway Designing @showdialog
-Build the launch area for the rocket.
+## 滑走路のデザイン @showdialog
+ロケットの打ち上げエリアを建設する。
 
-The airport runway are nearly complete. The final step is finishing painting the runway markings, so planes know at which angle to land.   
+空港の滑走路はほぼ完成している。最後のステップは滑走路のマーキングを仕上げて、飛行機がどの角度で着陸すべきかわかるようにすることだ。
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/runway/cover.png)
-## Working with Lists @showdialog
 
-Malinda, the Airport Manger has given your Agent the locations that she wants marked on the runway, in the form of a list. Before we get started, let's look at an example.
+## リストを扱う @showdialog
 
-For us to access the small lists, we can use a `||loops:for||` loop. Rather than using `range` we ask for each `small_list` in `large_list`.
+空港マネージャーのマリンダが、滑走路にマークしたい位置をリストの形でエージェントに渡してくれた。始める前に例を見てみよう。
+
+小さなリスト（各行）にアクセスするには `||loops:for||` ループが使える。`range` の代わりに、`large_list` の中の各 `small_list` を取り出すようにする。
+
 ```python
 large_list = [ [1,2,3], [4,5,6], [7,8,9] ]
 for small_list in large_list:
     player.output(smaller_list)
 ```
 
-## Task 1
-**Complete the `||loops:for||` loop to get, and say, every `row` in the runway design.**
+## タスク 1
+**滑走路デザインの各 `row`（行）を取得して表示する ``||loops:for||`` ループを完成させてください。**
 
 ```python
 runway_design = runway.get_runway_design()
@@ -81,12 +83,12 @@ for row in runway_design:
     player.say(row)
 ```
 
-## Task 2
-Now that you can see the individual rows, let's get each block in each row.
+## タスク 2
+各行を個別に取得できるようになったので、各行の各ブロックを取得しよう。
 
-For this, we will repeat what we had done before, but instead of getting every `row` in the runway design data, we can get every `block` in each `row`.
+前と同じようにするが、滑走路デザインの各 `row` を取得する代わりに、各 `row` の各 `block` を取得する。
 
-**Write another `||loops:for||` loop, inside the for loop you have already written, to get each `block` in each `row`.**
+**既に書いた for ループの中に、各 `row` の各 `block` を取得するもう 1 つの ``||loops:for||`` ループを書いてください。**
 
 ```python
 runway_design = runway.get_runway_design()
@@ -95,13 +97,13 @@ for row in runway_design:
         player.say(block)
 ```
 
-## Task 3
+## タスク 3
 
-With your code being able to get every block individually in each row, we can now program your Agent to move and place blocks.
+各行の各ブロックを 1 つずつ取得できるようになったので、エージェントを動かしてブロックを置くプログラムが書ける。
 
-If the block is "True" then a block should be placed, otherwise it should not.
+ブロックが「True」ならブロックを置き、そうでなければ置かない。
 
-**Add an `||logic:if||` statement, `||agent:agent.set_slot||` and `||agent:agent.place||` to place a block in the `DOWN` direction, from slot 1, within the inner loop if `block` is true.**
+**内側のループで、`block` が true のときに、``||logic:if||`` 文と ``||agent:agent.set_slot||``、``||agent:agent.place||`` を使って、スロット 1 から `DOWN`（下）方向にブロックを置くコードを追加してください。**
 
 ```python
 runway_design = runway.get_runway_design()
@@ -112,21 +114,21 @@ for row in runway_design:
             agent.place(DOWN)
 ```
 
-## Task 4 @showdialog
+## タスク 4 @showdialog
 
-Now that you have the Agent getting and placing blocks from the list, we can code the Agent to move across the runway.
+リストからブロックを取得して置けるようになったので、エージェントが滑走路を横切って移動するようにコードを書ける。
 
-As we have two loops, we will need to add two `||agent:agent.move||` commands. 
+ループが 2 つあるので、``||agent:agent.move||`` を 2 つ追加する必要がある。
 
-- The first, to move the Agent after each block is placed, to the next block.
+- 1 つ目は、ブロックを置くたびにエージェントを次のブロックへ移動させる。
 
-- The second at the end of every row, to move the agent forward to the next row.
+- 2 つ目は各行の終わりに、エージェントを次の行へ前に移動させる。
 
-You can also use the `||agent:agent.return_agent||` function to move your agent back to the left-hand side of the runway once each row is done.
+各行が終わったら ``||agent:agent.return_agent||`` でエージェントを滑走路の左端に戻すこともできる。
 
-## Task 4
+## タスク 4
 
-**Add two `||agent:agent.move||` commands. One to move the Agent `RIGHT` after placing a block, and another to move the Agent `FORWARD` after the second loop has finished. Then add an `||agent:agent.return_agent||` command below the second `||agent:agent.move||` command.**
+**``||agent:agent.move||`` を 2 つ追加してください。1 つはブロックを置いた後にエージェントを `RIGHT`（右）に移動させる。もう 1 つは 2 つ目のループが終わった後にエージェントを `FORWARD`（前）に移動させる。その後、2 つ目の ``||agent:agent.move||`` の下に ``||agent:agent.return_agent||`` を追加してください。**
 
 ```ghost
 for i in range(4):

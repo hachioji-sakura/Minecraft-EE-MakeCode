@@ -7,7 +7,7 @@ accepted_blocks = [COAL_BLOCK,
 for i in range(26):
     block = agent.inspect(AgentInspection.BLOCK, FORWARD)
     if block in accepted_blocks:
-        # Complete the if statement above
+        # 上の if 文を完成させる
         player.say("Accept")
         agent.accept()
     else:

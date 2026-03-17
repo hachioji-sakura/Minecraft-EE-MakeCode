@@ -10,5 +10,5 @@ def decode(info):
     else:
         return 0
 
-# Leave this at the bottom of your code so we know to run your decode function!
+# 解読関数を実行するため、コードの最後にこの行を残してください！
 telescope.decode_signals()

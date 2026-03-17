@@ -1,4 +1,4 @@
-# Run once for each row, use the whistle to call the agent to the start of each row
+# 各列ごとに1回実行する。ホイッスルでエージェントを各列の開始位置に呼ぶ
 for i in range(0, 8):
     agent.move(FORWARD, 1)
     block = agent.inspect(AgentInspection.BLOCK, DOWN)

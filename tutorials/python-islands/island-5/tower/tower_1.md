@@ -4,29 +4,29 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Tower 
+# 塔
 
 ```customts
 /**
- * Telescope
+ * 望遠鏡
  */
 //% color=purple weight=100 icon="\uf002" block="Telescope"
 namespace telescope {
     /**
-    * Tells your agent to start building the towers.
+    * エージェントに塔の建設を開始するよう指示する
     */
     //% block"Build Tower"
     export function start_building() {
         agent.teleport(world(1018,159,79), NORTH)
-        build_tower()  // user function
+        build_tower()  // ユーザー関数
         loops.pause(2000)
         let timer = 0
         while (timer < 30) {
             if (blocks.testForBlock(EMERALD_BLOCK, world(1027,154,60))){
-                // Tower A
+                // 塔 A
                 agent.teleport(world(1009,159,70), NORTH)
                 build_tower()
-                // Tower B
+                // 塔 B
                 agent.teleport(world(1027,159,70), NORTH)
                 build_tower()
                 break
@@ -49,7 +49,7 @@ namespace telescope {
 
 namespace agent {
     /**
-    * Has your agent draw a square with block in its inventory
+    * エージェントにインベントリのブロックで四角形を描かせる
     */
     //% block"Draw Square $size"
     export function draw_square(size: number){
@@ -65,59 +65,59 @@ namespace agent {
 
 ```template
 
-// Write your code above this line
+// この行の上にコードを書いてください
 telescope.start_building()
 ```
 
-## Building the Support towers @showdialog
-The local builders have the new telescope ready but need supports built to hold the dish! Help them by building the supports so that they can set up the telescope.
+## 支える塔を建設する @showdialog
+地元の建築業者が新しい望遠鏡の準備をしているが、パラボラを支える塔が必要だ！塔を建てて望遠鏡の設置を手伝おう。
 
 ![The telescope](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/tower/cover.jpg)
 
-## Introduction
+## はじめに
 
-For this task, we will use `functions`. `Functions` are mini-programs of code, that can be called/ran as many times as you want in your main program. For example, `||player:player.say()||` is a function that you call/run to output text into the chat.
+この任務では `functions`（関数）を使います。`Functions` は小さなコードのまとまりで、メインプログラムで何度でも呼び出し・実行できます。例えば `||player:player.say()||` は、チャットに文字を表示するために呼び出す関数です。
 
-As you go through these exercises below, the builders will test and run your function for you.
+以下の練習を進めると、建築業者が君の関数をテストして実行してくれます。
 
-## Step 1
+## ステップ 1
 
-The builders have asked you to create a `function` called `"build_tower()"`
+建築業者から、`"build_tower()"` という `function`（関数）を作ってほしいと頼まれました。
 
-To do this, we can do we can add   
-`def build_tower():`
+そのために、  
+`def build_tower():` と書きます。
 
-- `def` :  Tells Python you want to create a new function.
-- `build_tower():`  :  The name of the new function. When you want to run this code, just add `build_tower()` in your code.
+- `def` ：Python に新しい関数を作ることを伝える。
+- `build_tower():` ：新しい関数の名前。このコードを実行したいときは、コードに `build_tower()` と書く。
 
 ```python
 def build_tower():
-    # Something will go here later
+    # 後でここに何かを書く
     pass
 ```
 
-## Step 2
+## ステップ 2
 
-Now that you have the `function` set up, we need it to build a tower that is `15` blocks high. To do this, we need to use a ``||loops:for||`` loop that will run `15` times.
+`function` ができたので、高さ `15` ブロックの塔を建てるようにします。そのために、`15` 回実行される ``||loops:for||`` ループを使います。
 
-When adding code into a function in Python all the code that runs as part of the function need to be *indented*, this means a 4 spaces needs to be at the start of the line.
+Python で関数にコードを書くとき、関数の一部として実行するコードはすべて*インデント*（字下げ）する必要があります。行の先頭にスペース 4 つを入れます。
 
-**Add a ``||loops:for||`` loop that counts from `0` to `15`.**
+**`0` から `15` まで数える ``||loops:for||`` ループを追加してください。**
 
 ```python
 def build_tower():
     for height in range(0, 15):
-        # Something will go here later
+        # 後でここに何かを書く
         pass
 ```
 
-## Step 3
+## ステップ 3
 
-*Note, your Agent will automatically teleport to the diamond block when you start your code.*
+*注意：コードを開始すると、エージェントは自動的にダイヤモンドブロックの位置にテレポートします。*
 
-After you have the ``||loops:for||`` loop set up, we need to move the Agent up one block each iteration, to build all of the layers for the tower.
+``||loops:for||`` ループができたら、塔の層をすべて作るために、繰り返しのたびにエージェントを 1 ブロック上に移動させる必要があります。
 
-**Have your Agent ``||agent:move||`` `UP` `1` block within the for loop.**
+**for ループの中で、エージェントを ``||agent:move||`` で `UP`（上）に `1` ブロック移動させてください。**
 
 ```python
 def build_tower():
@@ -125,13 +125,13 @@ def build_tower():
         agent.move(UP, 1)
 ```
 
-## Step 4
+## ステップ 4
 
-Now each time your Agent moves up, you can build a new layer of the tower. To do this we use the ``||agent:agent.draw_square()||`` function. This allows you to build a square at the point your Agent is standing.
+エージェントが上に移動するたびに、塔の新しい層を作れます。そのために ``||agent:agent.draw_square()||`` 関数を使います。エージェントが立っている位置に四角形を作れます。
 
-``||agent:agent.draw_square()||`` takes a single input that's the width of the square. For example, 5 for a 5x5 layer.
+``||agent:agent.draw_square()||`` は 1 つの入力（四角形の幅）を取ります。例えば 5 なら 5x5 の層になります。
 
-**Add to your code to run the `agent.draw_square()` function with a width of `3`.**
+**幅 `3` で `agent.draw_square()` を実行するコードを追加してください。**
 
-## Run your code
-When you're done, run your code and, the builders will use your Agent to build the towers.
+## コードを実行しよう
+できたらコードを実行してください。建築業者が君のエージェントを使って塔を建てます。

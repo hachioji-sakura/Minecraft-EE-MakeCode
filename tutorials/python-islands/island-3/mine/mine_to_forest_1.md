@@ -4,22 +4,22 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go to the forest!
+# 森へ行こう！
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Collect some wood from the forest to finish the Mine @showdialog
+## 鉱山を完成させるために森から木材を集めよう @showdialog
 
 
 
 ![Forest](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/mine/forest.jpg)
 
-To get the gold needed for the crown, you must first help finish the construction of the Mine. Collect some wood from the Forest, then bring it to the Mine.
+王冠に必要な金を手に入れるには、まず鉱山の建設を完成させるのを手伝う必要があります。森で木材を集め、鉱山へ持っていってください。
 
 ```spy
 

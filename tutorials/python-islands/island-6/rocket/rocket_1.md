@@ -5,8 +5,8 @@
 ### @codeStop players set @s codeExecution 0
 
 
-# Rocket
-Check the rocket is ready to launch
+# ロケット
+打ち上げ準備ができているかロケットをチェックする
 
 ```template
 let accepted_blocks = [COAL_BLOCK, CONCRETE, GRAY_STAINED_GLASS, BLOCK_OF_QUARTZ, QUARTZ_STAIRS, IRON_BARS];
@@ -14,7 +14,7 @@ let accepted_blocks = [COAL_BLOCK, CONCRETE, GRAY_STAINED_GLASS, BLOCK_OF_QUARTZ
 let block = agent.inspect(AgentInspection.Block, FORWARD);
 
 if () {
-    // Complete the if statement above
+    // 上の if 文を完成させる
     player.say("Accept")
     agent.accept()
 }
@@ -23,7 +23,7 @@ if () {
 ```customts
 namespace agent {
     /**
-    * Mark the block as accepted for the scientists.
+    * 科学者向けにブロックを承認としてマークする
     */
     //% block
     export function accept(): void {
@@ -32,7 +32,7 @@ namespace agent {
     }
 
     /**
-    * Mark the block as denied for the scientists.
+    * 科学者向けにブロックを却下としてマークする
     */
     //% block
     export function deny(): void {
@@ -42,27 +42,27 @@ namespace agent {
 }
 ```
 
-## Rocket Repairs @showdialog
+## ロケットの修理 @showdialog
 
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/rocket/cover.png)
-The rocket needs to be checked for cracks! Use your agent to detect if there are any damaged/cracked blocks. If there are, you should mark these for repair.
+ロケットにひびがないかチェックする必要がある！エージェントを使って、損傷やひびのあるブロックがないか調べてください。あれば修理の印をつけてください。
 
-## Checking Lists @showdialog
+## リストのチェック @showdialog
 
-We need to check if the block in front of the agent is included in a list of `accepted_blocks` that was given to the agent from the scientist. These blocks are the acceptable state of each block.    
+エージェントの前のブロックが、科学者がエージェントに渡した `accepted_blocks` のリストに含まれているか確認する必要がある。これらのブロックが、各ブロックの許容される状態だ。
 
-We can check each block very easily, using a keyword `in`. 
+キーワード `in` を使うと、各ブロックを簡単にチェックできる。
 
-With `in` we can check if a value is **in a list**. If it is in the list, then it returns `True`. Here's an example:
+`in` で、ある値が**リストに含まれているか**をチェックできる。含まれていれば `True` を返す。例：
 
 ```python
 my_list = ["A", "B", "C", "D"]
 if "B" in my_list:
-    say("True!") # This would print "True!" as "B" is in my_list
+    say("True!") # "B" は my_list に含まれるので "True!" と表示される
 ```
 
-## Step 1
-**Use the 'in' keyword to complete the if statement to check if the 'block' is 'in' the 'accepted_blocks' list.**
+## ステップ 1
+**`block` が `accepted_blocks` リストに「含まれている」（in）かチェックする if 文を、'in' キーワードで完成させてください。**
 
 `||logic:if item in list:||`
 
@@ -73,10 +73,10 @@ if block in accepted_blocks:
 ```
 
 
-## Step 2
-With the accepted blocks noted and flagged up to the scientists, let's turn our attention to the deny blocks.
+## ステップ 2
+承認ブロックに印をつけて科学者に知らせたので、次は却下ブロックに注目しよう。
 
-**Add an else statement to your code with `||player:player.say("Deny")||` and `||agent:agent.deny()||`.**
+**`||player:player.say("Deny")||` と `||agent:agent.deny()||` を使った else 文をコードに追加してください。**
 
 ```python
 if block in accepted_blocks:
@@ -87,10 +87,10 @@ else:
     agent.deny()
 ```
 
-## Step 3
-To wrap all of your code up, we're going to use a `for loop` to check each block above your Agent. The scientist has told you that the rocket is 26 blocks high.
+## ステップ 3
+コード全体をまとめるために、エージェントの上にある各ブロックをチェックする `for` ループを使う。科学者によるとロケットの高さは 26 ブロックだ。
 
-**Wrap your 'if else' statement, and block inspection, in a `||loops:for||` loop where at the end of your loop you use `||agent:agent.move||` to move your agent 'UP' 1 block. Your code should loop until the agent gets to the top of the rocket (26 times).** 
+**「if else」文とブロックの検査を、`||loops:for||` ループで囲んでください。ループの最後で ``||agent:agent.move||`` でエージェントを「UP」（上）に 1 ブロック移動させる。エージェントがロケットの頂上に着くまで（26 回）ループするようにしてください。**
 
 ```python
 for i in range(26):

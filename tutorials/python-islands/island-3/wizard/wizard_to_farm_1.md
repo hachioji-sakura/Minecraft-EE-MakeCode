@@ -4,20 +4,20 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Head to the farm
+# 農場へ向かおう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Get some wool from the farm @showdialog
+## 農場で羊毛をもらおう @showdialog
 
 ![Farm](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/wizard/farm.jpg)
 
-Head to the farm and get some wool for the wizard to make the robe for the king.
+農場へ行き、魔法使いが王様のローブを作るための羊毛をもらってきてください。
 ```spy
 
 ```

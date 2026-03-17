@@ -4,27 +4,27 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Go Help Marcus
+# マーカスを手伝いに行こう
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-## Give Marcus a Hand! @showdialog
+## マーカスを手伝おう！ @showdialog
 
 ![Marcus](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/mine_manager/cover.png)
 
-Great, you got me the materials.
+材料を届けてくれてありがとう。
 
-We would really appreciate your help finishing the airship off.
+飛行船の仕上げを手伝ってもらえると本当に助かる。
 
-Go talk to Marcus to lend a hand.
+マーカスに話しかけて手伝ってほしいと伝えてくれ。
 
 
-**Anna**
+**アンナ**
 
 ```spy
 ```

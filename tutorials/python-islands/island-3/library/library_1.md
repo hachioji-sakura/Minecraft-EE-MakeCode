@@ -4,7 +4,7 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Library
+# 図書館
 
 ```template
 if (agent.check_book_on_shelf(FORWARD) === ){
@@ -16,11 +16,11 @@ if (agent.check_book_on_shelf(FORWARD) === ){
 
 ```customts
 /**
- * Functions for working in the Library
+ * 図書館で作業するための関数
  */
 namespace agent {
     /**
-    * Checks if the Spellbook is in shelf
+    * 呪文の本が棚にあるかチェックする
     */
     //% block="agent check shelf %direction"
     //% direction.defl=FORWARD
@@ -33,7 +33,7 @@ namespace agent {
     }
 
     /**
-     * Marks the shelf the Spellbook is in
+     * 呪文の本がある棚に印をつける
      */
     //% block="agent mark book %direction"
     //% direction.defl=FORWARD
@@ -56,18 +56,18 @@ for (let count = 0;count < 5;count++){
 }
 ```
 
-## Spell book finding @showdialog
+## 呪文の本を探す @showdialog
 
-Locate the spellbook in the library that is needed by the Wizard.
+魔法使いに必要な呪文の本を図書館で見つけてください。
 
 ![Bookshelves](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/library/shelves.jpg)
 
-## Scanning shelves
-The library has lots of shelves of books. They all look the same... However, will we find the right book?
+## 棚をスキャンする
+図書館には本の棚がたくさんあります。どれも同じに見えますが…正しい本は見つかるでしょうか？
 
-*"I can help with that! I have added a special function to your agent called ``||agent:agent.check_book_on_shelf(DIRECTION)||``. It can be used in an **if statement** to confirm if the bookshelf you are checking has the needed book on it. It returns True if the book is found or False if not." - Willow - Librarian*
+*「私がお手伝いします！エージェントに ``||agent:agent.check_book_on_shelf(DIRECTION)||`` という特別な関数を追加しました。**if 文**で、調べている本棚に目的の本があるか確認するときに使えます。本があれば True、なければ False を返します。」 - ウィロー（司書）*
 
-**Find your agent and finish off the code provided to check the bookshelf in front of it.**
+**エージェントを見つけ、目の前の本棚をチェックするために用意されたコードを完成させてください。**
 
 ```spy
 if (agent.check_book_on_shelf(FORWARD) == true){
@@ -77,11 +77,11 @@ if (agent.check_book_on_shelf(FORWARD) == true){
 }
 ```
 
-## Scanning an entire column of books
+## 本棚の列全体をスキャンする
 
-So that isn't the right book then... But there are plenty more bookshelves to check. You can use a ``||loops:for||``to check multiple bookshelves in 1 go!
+その本ではなかったようです…でも、まだチェックできる本棚はたくさんあります。``||loops:for||`` で、1 回の実行で複数の本棚をチェックできます！
 
-**Count the number of bookshelves in the columns, then create a for loop using the code from the previous activity, that will check all the books in that column.**
+**列にある本棚の数を数え、前の活動のコードを使った for ループを作成して、その列の本をすべてチェックしてください。**
 
 ```diffspy
 if (agent.check_book_on_shelf(FORWARD) == true){
@@ -100,14 +100,14 @@ for (let count = 0; count < 5; count++){
 }
 ```
 
-## Marking the shelf
+## 棚に印をつける
 
-Once you have found the book, you need to mark that shelf so the librarian can get you the book.
+本が見つかったら、司書が本を取れるようにその棚に印をつける必要があります。
 
-The librarian has added another function to the agent, ``||agent:agent.mark_book(DIRECTION)||``, which should be run on the shelf your agent has found the book on.   
+司書がエージェントに ``||agent:agent.mark_book(DIRECTION)||`` という関数を追加してくれました。本が見つかった棚でこの関数を実行してください。
 
-**Add this to your if statement so it is run when the book is found.**
+**本が見つかったときに実行されるよう、if 文にこれを追加してください。**
 
-## Getting the book
+## 本を受け取る
 
-Once you have marked the shelf, walk back over to the librarian and ask her to get the book for you. Be careful though to make sure it is the correct shelf, as the librarian is very busy.
+棚に印をつけたら、司書のところへ戻って本を取ってもらってください。司書はとても忙しいので、正しい棚かどうかよく確認してください。

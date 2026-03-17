@@ -4,19 +4,19 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Ship Docking 2
+# 船の接岸 2
 
-## Building the Gang Plank @showdialog
+## タラップを作る @showdialog
 
 ![Gangplank location](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/ship/gangplank.jpg)
 
-Now the hatches are covered. The captain has brought the airship in as close as he can to the dock.
+ハッチは覆えました。船長が飛行船を埠頭にできる限り近づけてくれました。
 
-You will need to build a gangplank. Your agent has now got some planks in slot 1 of its inventory.
+タラップを作る必要があります。エージェントのインベントリのスロット 1 に木材が入っています。
 
-## Building the Gang Plank
+## タラップを作る
 
-**Create a ``||loops:for||`` loop program that moves your agent `FORWARD`, while placing blocks below, to build the gangplank out to reach the dock. You will have to guess how far away the island is!**
+**エージェントを `FORWARD`（前）に動かしながら下にブロックを置き、埠頭まで届くタラップを作る ``||loops:for||`` ループのプログラムを作成してください。島までの距離は推測する必要があります！**
 
 ```python
 for i in range(8):
@@ -24,7 +24,7 @@ for i in range(8):
     agent.place(DOWN)
 ```
 
-## Gang Plank built!
+## タラップができた！
 
-Once complete, close this window and explore the town.
+できたらこのウィンドウを閉じて、町を探索してください。
 

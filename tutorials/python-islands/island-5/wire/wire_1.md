@@ -4,12 +4,12 @@
 ### @codeStart players set @s codeExecution 1
 ### @codeStop players set @s codeExecution 0
 
-# Wire
+# ワイヤー（配線）
 
 ```customts
 namespace positions {
     /**
-    * Provides a corrected location
+    * 補正した位置を返す
     */
     //% block"Correct Location %pos"
     export function correctLocation(pos: Position) {
@@ -20,7 +20,7 @@ namespace positions {
 
 namespace agent {
     /**
-     * Allows your agent to place down wire.
+     * エージェントにワイヤーを置かせる
      */
     //% block="agent place wire %direction"
     //% direction.defl=DOWN
@@ -53,43 +53,43 @@ player.onTravelled(WALK, function () {
 
 ```
 
-## Wire to the Power Station @showdialog
+## 発電所までワイヤーを引く @showdialog
 
-With the telescope built and ready to start searching the stars, the final thing it needs is power! You need to hook up a wire between the Power Station and the transformer building on the telescope island.
+望遠鏡が建てられ、星を探す準備が整った。あと必要なのは電源だ！発電所と望遠鏡の島にある変圧器の建物の間にワイヤーをつなぐ必要がある。
 
-As the wire is fragile, you will use your agent to do this.
+ワイヤーは壊れやすいので、エージェントにやらせる。
 
-Could you program your Agent to follow you along the bridge and place down the wire as it does?
+橋の上で君についてきて、ワイヤーを置くようにエージェントにプログラムしてくれないか？
 
 ![Picture of Power station](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-5/wire/cover.jpg)
 
-## Step 1
+## ステップ 1
 
-To begin, you'll need to create a function that will run every time you move. To do this we first need to make a function that Minecraft will call when we move, we'll call this `on_travelled_walk()`.
+まず、移動するたびに実行される関数を作る必要がある。そのために、移動したときに Minecraft が呼び出す関数を作る。`on_travelled_walk()` と呼ぼう。
 
-**Can you start by creating a function called `on_travelled_walk()`**
+**`on_travelled_walk()` という関数を作成することから始めてください。**
 
 ```python
 def on_travelled_walk():
-    # We'll add code here in the steps to come
+    # これからのステップでここにコードを追加する
     pass
 ```
 
-## Step 2
+## ステップ 2
 
-Now your program will need to know where you've walked, to do this we'll add a *variable* called `loc` and assign it ``||player:player.position()||``.
+プログラムに、君が歩いた場所を知らせる必要がある。そのために、`loc` という*変数*を追加し、``||player:player.position()||`` を代入する。
 
 ```python
 def on_travelled_walk():
     loc = player.position()
 ```
 
-## Step 3
-As you walk, you need to get the exact location for your Agent to place down the wire. For this, we can use the `loc` variable we just added.
+## ステップ 3
+歩きながら、エージェントがワイヤーを置く正確な位置を取得する必要がある。そのために、今追加した `loc` 変数が使える。
 
-To correct the location for the Agent to use, we'll run the `||positions:positions.correct_location()||` function and pass in our `loc` variable. Then storing the result as our new `loc`.
+エージェントが使う位置を補正するには、`||positions:positions.correct_location()||` 関数を実行し、`loc` 変数を渡す。そして結果を新しい `loc` に格納する。
 
-**On a new line, set `loc`, to equal to the `||positions:positions.correct_location()||` function and pass our `loc` variable as the `position`.**
+**新しい行で、`loc` を `||positions:positions.correct_location()||` の結果にし、`position` として `loc` 変数を渡してください。**
 
 ```python
 def on_travelled_walk():
@@ -97,10 +97,10 @@ def on_travelled_walk():
     loc = positions.correct_location(loc)
 ```
 
-## Step 4
-The next step is to teleport your Agent to the corrected position. To teleport your Agent you can use ``||agent:agent.teleport()||``.
+## ステップ 4
+次のステップは、エージェントを補正した位置にテレポートさせることだ。エージェントのテレポートには ``||agent:agent.teleport()||`` が使える。
 
-**Add the code to teleport your Agent to our `loc` variable facing `NORTH`.**
+**エージェントを `loc` の位置に `NORTH`（北）を向けてテレポートさせるコードを追加してください。**
 
 ```python
 def on_travelled_walk():
@@ -109,12 +109,12 @@ def on_travelled_walk():
     agent.teleport(loc, NORTH)
 ```
 
-## Step 5
-The last step is to have your Agent place down the wire to make the connection.
+## ステップ 5
+最後のステップは、エージェントにワイヤーを置いて接続させることだ。
 
-The Power Station staff have already given your Agent some wire and a function that allows your agent to place the wire. All you need to do is use ``||agent:agent.place_wire()||`` to place it `DOWN`.
+発電所のスタッフが、すでにエージェントにワイヤーと、ワイヤーを置く関数を渡してくれている。あとは ``||agent:agent.place_wire()||`` で `DOWN`（下）に置くだけだ。
 
-**Add an ``||agent:agent.place_wire||`` below so it places `DOWN`.**
+**下に ``||agent:agent.place_wire||`` を追加し、`DOWN` に置くようにしてください。**
 
 ```python
 def on_travelled_walk():
@@ -124,11 +124,11 @@ def on_travelled_walk():
     agent.place_wire(DOWN)
 ```
 
-## Step 5
-The final step is to make sure the game triggers our code when we travel, to do this we can use ``||player:player.on_travelled()||``. This two parameters the mode of travel which is `WALK` for us to lay the wire, and the second being the name of the function we want to trigger.
+## ステップ 5
+最後に、移動したときにゲームがこのコードを実行するようにする。そのために ``||player:player.on_travelled()||`` が使える。2 つの引数を取る。1 つ目は移動の種類で、ワイヤーを敷くには `WALK`。2 つ目は実行したい関数の名前。
 
-**At the end of your code outside of the function we created add in ``||player:player.on_travelled()||`` with the parameters of `WALK` and the name of our function `on_travelled_walk` that we made**
+**作った関数の外、コードの最後に、``||player:player.on_travelled()||`` を追加し、引数に `WALK` と作った関数 `on_travelled_walk` の名前を渡してください。**
 
-## Start placing wire!
+## ワイヤーを敷き始めよう！
 
-When you're ready, run your code and slowly walk on the path to the right of the bridge, so your Agent will follow and place the wire. You should start from the "**External Power Station Plug**".
+準備ができたらコードを実行し、橋の右側の道をゆっくり歩いて、エージェントがついてきてワイヤーを置くようにしよう。「**外部発電所プラグ**」から始めてください。

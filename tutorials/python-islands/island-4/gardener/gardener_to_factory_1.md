@@ -5,22 +5,22 @@
 ### @codeStop players set @s codeExecution 0
 
 ```template
-// Nothing here to code!
+// ここにコードを書くものはありません！
 ```
 
 ```ghost
 ```
 
-# Deliver the Dye
-Delivery the Dye to Anna the Factory Manager
+# 染料を届ける
+染料を工場長のアンナに届ける
 
-## Deliver the Materials @showdialog
+## 材料を届けよう @showdialog
 ![Picture of Anna](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/gardener/Dye_Cover.jpg)
-Great job picking the flowers and getting the diamond!
+花を摘んでダイヤモンドも手に入れてくれてありがとう！
 
-Could you deliver them to Anna at the Airship Factory?
+飛行船工場のアンナに届けてくれないか？
 
-**Genieve**
+**ジェニーブ**
 
 
 ```spy
