@@ -1,15 +1,15 @@
-# This moves to, tills, and places the seeds for the first point.
+# 最初のポイントに移動し、耕し、種を植えます。
 agent.move(LEFT, 3)
 agent.till(DOWN)
 agent.place(DOWN)
 
-# This does the second point assuming the agent starts at the first point.
+# エージェントが最初のポイントから開始すると仮定して、2番目のポイントを処理します。
 agent.move(RIGHT, 3)
 agent.move(FORWARD, 1)
 agent.till(DOWN)
 agent.place(DOWN)
 
-# This does the third and final point assuming the agent starts at the second point.
+# エージェントが2番目のポイントから開始すると仮定して、3番目で最後のポイントを処理します。
 agent.move(RIGHT, 4)
 agent.move(FORWARD, 1)
 agent.till(DOWN)

@@ -1,7 +1,7 @@
-# Edit the text (String) below to add your own message
+# 下のテキスト（文字列）を編集して、独自のメッセージを追加します
 my_variable = "World"
 
 my_variable = "Hello world!"
 
-# This line below outputs the contents of your variable to game chat
+# 下の行は、変数の内容をゲームチャットに出力します
 player.say(my_variable)

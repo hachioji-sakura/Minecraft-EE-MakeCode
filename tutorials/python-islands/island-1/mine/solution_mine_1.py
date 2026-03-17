@@ -1,15 +1,15 @@
-# Moves the agent to and destroys the first piece of coal.
+# エージェントを移動させ、最初の石炭を破壊します。
 agent.move(UP, 2)
 agent.move(LEFT, 1)
 agent.move(FORWARD, 1)
 agent.destroy(FORWARD)
 
-# From in front of the first piece of coal, moves the agent in front of, and destroys, the second piece of coal.
+# 最初の石炭の前から、エージェントを2番目の石炭の前に移動させ、破壊します。
 agent.move(RIGHT, 2)
 agent.move(DOWN, 1)
 agent.destroy(FORWARD)
 
-# Third piece of coal.
+# 3番目の石炭。
 agent.move(DOWN, 2)
 agent.move(FORWARD, 1)
 agent.destroy(FORWARD)
