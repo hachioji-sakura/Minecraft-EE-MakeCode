@@ -18,19 +18,35 @@ agent
 ![Cover Image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-1/forest/cover.png)
 
 ## エージェントをはしごまで移動させる
-まず、`||agent:agent.move(DIRECTION, BLOCKS)||`を使ってエージェントをはしごまで移動させる必要があります。
+まず、`||agent:agent.move(DIRECTION, 1)||`を使ってエージェントをはしごまで移動させる必要があります。
 ```python
 agent.move(FORWARD, 1)
 ```
 
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
+
 ## はしごを修復する
 これで、木の上のはしごを修復する準備ができました。
 ブロックを配置するには、`||agent:agent.place(DIRECTION)||`を使用できます。 
-`||agent:agent.place||`を追加して、エージェントの前（`FORWARD`）にはしごを配置しましょう。
+`||agent:agent.place()||`を追加して、エージェントの前（`FORWARD`）にはしごを配置しましょう。
 ```python
 agent.move(FORWARD, 1)
 agent.place(FORWARD)
 ```
+
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
 
 ## 残りを修復する
 最初のはしごを置き換えたので、上にもう1つ欠けているはしごがあるようです...

@@ -22,6 +22,13 @@ agent
 
 `||agent:agent.move(DIRECTION, DISTANCE)||`を使って、エージェントを木の中の金色のブロックまで移動させましょう。
 
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
+
 ```python
 agent.move(FORWARD, 1)
 ```

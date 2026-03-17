@@ -31,10 +31,17 @@ agent.move(DIRECTION, BLOCKS)
 これでブロックを採掘して石炭を集めることができます！
 エージェントを使って、前の石炭ブロックを破壊しましょう。
 
+エージェントが移動できる方向：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
+
 ```python
 agent.destroy(DIRECTION)
 ```
-- `DIRECTION`: エージェントが壊そうとする方向。使用できる方向は：前（FORWARD）、後ろ（BACK）、左（LEFT）、右（RIGHT）、上（UP）、下（DOWN）です。
 
 ## 残りを取得する
 1つ完了、あと2つです！離れたい場合は、ニコルに話しかけてください。ただし、そうすると最初からやり直しになります。

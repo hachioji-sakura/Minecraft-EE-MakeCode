@@ -25,11 +25,26 @@ agent
 agent.move(LEFT, 3)
 ```
 
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
+
 
 ## 必要な場所を耕す
-耕すことで、通常の土を準備して種を育てられるようになります。エージェントを土ブロックの上に浮かせたら（`||agent:agent.move(FORWARD)||`を使用）、それを耕す必要があります。
+耕すことで、通常の土を準備して種を育てられるようになります。エージェントを土ブロックの上に浮かせたら（`||agent:agent.move(DIRECTION, 1)||`を使用）、それを耕す必要があります。
 エージェントを使って土を耕すには、`||agent:agent.till(DIRECTION)||`を使用します。
 
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
 
 ```python
 agent.move(LEFT, 3)
@@ -40,6 +55,13 @@ agent.till(DOWN)
 地面が耕されたので、マーカーが白色に変わったのが見えるはずです。  
 次に、`||agent:agent.place(DIRECTION)||`を使って種を植える必要があります。
 
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
 
 ```python
 agent.move(LEFT, 3)
