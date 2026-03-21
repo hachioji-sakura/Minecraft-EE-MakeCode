@@ -91,7 +91,7 @@ player.say(agent.is_nest())
 
 ``||agent:agent.is_nest()||`` の使い方がわかったので、``||logic:if||`` 文と組み合わせて、前のブロックが**巣かどうか**をチェックできます。
 
-巣がある場合は触らず、``||agent:agent.next()||`` を実行して次の場所へ進みます。
+巣がある場合は触らず、``||agent:agent.next_location()||`` を実行して次の場所へ進みます。
 
 **``||agent:agent.is_nest()||`` が `True` を返したときに次の場所へ移動する ``||logic:if||`` 文を作成してください。**
 
