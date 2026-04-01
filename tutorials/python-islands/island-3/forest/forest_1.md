@@ -35,9 +35,17 @@ for (let i = 0; i < 5; i++){
 
 ## ステップ 1
 
-まず、木の根元を取り除きます。``||agent:agent.destroy||`` で下の 4 ブロックを壊し、``||agent:agent.move||`` で次のブロックへ移動するだけです！
+まず、木の根元を取り除きます。
 
-**``||agent:agent.destroy||`` と ``||agent:agent.move||`` を使って、木の最下層の 4 本の丸太を取り除いてください！**
+**``||agent:agent.destroy||`` と ``||agent:agent.move||`` を使って、木の一番下の幹（ブロック4つ分）を取り除いてください！**
+
+DIRECTION（方向）に入る値：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
 
 ```spy
 agent.destroy(FORWARD)
@@ -62,7 +70,6 @@ agent.destroy(FORWARD)
 ```spy
 for (let count = 0; count < 12; count++){
     // 繰り返すコード
-    player.say("Hi")
 }
 ```
 

@@ -38,13 +38,21 @@ for (let count = 0; count < 5; count++){
 
 ![Captain](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-3/ship/captain.jpg)
 
-**ペーパート船長** - *もうすぐ接岸するが、その前にハッチを覆うのを手伝ってくれないか？船のメインデッキにあるんだ。*
+**パパート船長** - *もうすぐ接岸するが、その前にハッチを覆うのを手伝ってくれないか？船のメインデッキにあるんだ。*
 
 ## エージェントでデッキを覆う
 
-ペーパート船長がエージェントに**カーペット**（スロット 1）を渡してくれました。``||loops:for loop||`` と ``||agent:agent.place()||`` で、ハッチの上にカーペットを敷ける？
+パパート船長がエージェントに**カーペット**（スロット 1）を渡してくれました。``||loops:for||`` と ``||agent:agent.place()||`` で、ハッチの上にカーペットを敷いてください。
 
 *1 列終わったら**ホイッスル**（または ``||agent:agent.move()||``）でエージェントを移動させ、もう一度コードを実行してください。*
+
+方向：
+- 前：FORWARD
+- 後：BACK
+- 左：LEFT
+- 右：RIGHT
+- 上：UP
+- 下：DOWN
 
 ```spy
 for (let count = 0; count < 6; count++){
