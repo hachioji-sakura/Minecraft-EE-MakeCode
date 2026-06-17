@@ -27,12 +27,12 @@ namespace agent {
 ## 花の自動収穫と選別 @showdialog
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/farm/cover.jpg)
 
-**庭師** - 「*植物園へようこそ！必要な赤い染料にするヒナゲシを摘むのを手伝ってほしい。君とエージェントでヒナゲシを摘んでくれないか？*」
+**庭師** - 「*植物園へようこそ！必要な赤い染料にするポピーを摘むのを手伝ってほしいです。君とエージェントでポピーを摘んでくれませんか？*」
 
-`||loops:while||` ループを使うと、**十分な数になるまで**エージェントがヒナゲシを集め続けます。ヒナゲシが十分（4 つ）になったら、エージェントは止まります。
+`||loops:while||` ループを使うと、**十分な数になるまで**エージェントがポピーを集め続けます。ポピーが十分（4つ）になったら、エージェントは止まります。
 
 ## タスク 1
-**`||loops:while||` ループを用意し、条件に ``||agent:agent.get_item_count||`` をスロット番号（1）だけを引数にして使ってください。スロット 1 のヒナゲシが 4 つ未満の間、このループを繰り返します。**
+**`||loops:while||` ループを用意し、条件に ``||agent:agent.get_item_count||`` をスロット番号（1）だけを引数にして使ってください。スロット 1 のポピーが 4 つ未満の間、このループを繰り返します。**
 
 ```python-ignore
 while agent.get_item_count(1) < 4:
@@ -40,7 +40,7 @@ while agent.get_item_count(1) < 4:
 
 ## タスク 2
 
-**ループの中で、ヒナゲシが 4 つ未満の間、エージェントを 'FORWARD'（前）方向に動かす ``||agent:agent.move||`` を追加してください。**
+**ループの中で、ポピーが 4つ未満の間、エージェントを 'FORWARD'（前）方向に1ブロック動かす ``||agent:agent.move||`` を追加してください。**
 
 いつでもホイッスルでエージェントを呼び戻せることを忘れないでください。
 
@@ -52,12 +52,12 @@ while agent.get_item_count(1) < 4:
 ## 花をチェックして壊す @showdialog
 エージェントを動かせるようになったので、下にどんな花があるか確認し、収穫（*壊す*）するかどうか決める必要があります。
 そのために ``||agent:agent.check_flower||``（方向は `DOWN`）が使えます。エージェントの下の花の種類を返します。
-この情報を `||logic:if||` 文で使い、花が `"POPPY"` かどうかをチェックできます。
-ヒナゲシなら、``||agent:agent.destroy||``（方向は `DOWN`）でエージェントの下の花を摘めます。
+この情報を `||logic:if||` 文で使い、花が `"POPPY"` (ポピー) かどうかをチェックできます。
+もしポピーなら、``||agent:agent.destroy||``（方向は `DOWN`）でエージェントの下の花を摘めます。
 
 ## タスク 3
-**while ループの中に、``||agent:agent.check_flower||`` で花が `"POPPY"` かどうかをチェックする `||logic:if||` 文を追加してください。**
-**ヒナゲシなら、`||agent:agent.destroy||` を呼んでください。エージェントの下（DOWN）をチェックするようにしてください。**
+**while ループの中に、``||agent:agent.check_flower||`` で花が `POPPY` (ポピー) かどうかをチェックする `||logic:if||` 文を追加してください。**
+**もしポピーなら、`||agent:agent.destroy||` を呼んでください。エージェントの下（DOWN）をチェックするようにしてください。**
 
 ```python
 while agent.get_item_count(1) < 4:
@@ -67,7 +67,7 @@ while agent.get_item_count(1) < 4:
 ```
 
 ## タスク 4
-エージェントが 1 列の花をチェックし終えたので、次の列に移る必要があります。そのために while ループの上に ``||agent:agent.move||`` と ``||agent:agent.turn||`` を追加し、エージェントが次の列を始められるようにしてください。
+エージェントが 1 列の花をチェックし終えたら、次の列に移る必要があります。そのために while ループとは別に ``||agent:agent.move||`` と ``||agent:agent.turn||`` を追加し、エージェントが次の列を始められるようにしてください。
 向きを変える方向を毎回変えながら、もう何度か繰り返して、すべての列を調べてください。
 
 ```ghost

@@ -85,7 +85,7 @@ while found_diamond < 3:
 
 エージェントに、指定した方向の鉱石を返す `||agent:agent.check_ore||` という特別な関数が与えられています。
 
-**ループの中に、``||agent:agent.check_ore||`` を使った `||logic:if||` 文を追加し、エージェントの前のブロックが `DIAMOND_ORE` かどうかをチェックしてください。ダイヤモンドなら found_diamond を増やし、``||player:player.say||`` で「`diamond found`」と表示してください。**
+**ループの中に、``||agent:agent.check_ore||`` を使った `||logic:if||` 文を追加し、エージェントの前のブロックが `DIAMOND_ORE` (ダイヤモンド鉱石) かどうかをチェックしてください。もしダイヤモンドなら found_diamond 変数を1増やし、``||player:player.say||`` で「`diamond found`」（ダイヤが見つかった）と表示してください。**
 
 ```python
 found_diamond = 0

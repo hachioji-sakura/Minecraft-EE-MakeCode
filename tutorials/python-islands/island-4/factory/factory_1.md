@@ -31,7 +31,7 @@ agent.move(FORWARD, 1)
 
 そのために、エージェントの下が空気の間だけ下に移動する while ループを使います。
 
-**`||loops:while||` ループと DOWN 方向の ``||agent:agent.inspect||`` を使って、ブロックが `AIR` でなくなるまでエージェントを下に移動させるようにコードを変更してください。**
+**`||loops:while||` ループと DOWN (下) 方向の ``||agent:agent.inspect||`` を使って、ブロックが `AIR` (空気) の間はずっとエージェントを下に移動させ続けるようにコードを変更してください。**
 
 ```python
 while agent.inspect(AgentInspection.BLOCK, DOWN) == AIR:

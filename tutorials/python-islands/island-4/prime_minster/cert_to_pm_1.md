@@ -17,9 +17,9 @@
 
 ![PM With certificate of airworthiness](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/prime_minster/Cert_Cover.jpg)
 
-スタッフから、君が新しい飛行船の耐空証明書を手に入れたと聞いた。
+作業員から、君が新しい飛行船の耐空証明書を手に入れたと聞きました。
 
-できるだけ早く、その証明書を私に届けてほしい。
+できるだけ早く、その証明書を私に届けてほしいです。
 
 
 **首相**

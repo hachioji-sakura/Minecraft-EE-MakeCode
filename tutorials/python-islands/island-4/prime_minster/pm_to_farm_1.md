@@ -17,11 +17,11 @@
 
 ![Photo of Prime Minster](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-4/prime_minster/PM_Photo.jpg)
 
-気になる知らせが届いている…君がいる島は、鉱山の島にゆっくりと衝突するコースにあるのだ！
+気になる知らせが届いている…君がいる島は、鉱山の島にゆっくりと衝突しそうなんだ！
 
 この島に住む紳士を助けなければならない…
 
-彼のために飛行船を作るべきだと思う！
+彼のために飛行船を作らねば！
 
 
 鉱山へ行き、建造中の新しい飛行船用のダイヤモンドを手に入れてほしい。

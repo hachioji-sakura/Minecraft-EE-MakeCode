@@ -20,7 +20,7 @@ player.say("I've reached the end")
 
 ## `while` ループの基本 @showdialog
 
-アイランド 3 では `||loops:for||` ループを紹介しました。この島では、もう一つのループである `||loops:while||` ループを使いこなします。何回繰り返すかわからないときに使います。
+アイランド3 では `||loops:for||` ループを紹介しました。この島では、もう一つのループである `||loops:while||` ループを使いこなします。何回繰り返すかわからないときに使います。
 
 
 
@@ -50,7 +50,7 @@ while condition_1 == condition_2:
 ## ステップ 1
 `||loops:while||` ループの条件に ``||agent:agent.inspect||`` を使います。
 
-`FORWARD` 方向のブロックが空気かどうかをエージェントがチェックするように、``||loops:while||`` ループに ``||agent:agent.inspect||`` を追加して完成させてください。
+`FORWARD` (前) 方向のブロックが空気かどうかをエージェントがチェックするように、``||loops:while||`` ループに ``||agent:agent.inspect||`` を追加して完成させてください。
 
 ```python-ignore
 while (agent.inspect(AgentInspection.BLOCK, FORWARD) == AIR):
