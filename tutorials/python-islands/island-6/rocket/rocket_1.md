@@ -62,9 +62,9 @@ if "B" in my_list:
 ```
 
 ## ステップ 1
-**`block` が `accepted_blocks` リストに「含まれている」（in）かチェックする if 文を、'in' キーワードで完成させてください。**
+**`block`変数 が `accepted_blocks` リストに「含まれている」かチェックする if 文を、'in' キーワードで完成させてください。**
 
-`||logic:if item in list:||`
+`||logic:if 変数名 in リスト名:||` のように書きます。
 
 ```python
 if block in accepted_blocks:
@@ -78,6 +78,8 @@ if block in accepted_blocks:
 
 **`||player:player.say("Deny")||` と `||agent:agent.deny()||` を使った else 文をコードに追加してください。**
 
+Accept（アクセプト）は承認、Deny（デナイ）は却下するという意味の英単語です。
+
 ```python
 if block in accepted_blocks:
     player.say("Accept")
@@ -88,13 +90,15 @@ else:
 ```
 
 ## ステップ 3
-コード全体をまとめるために、エージェントの上にある各ブロックをチェックする `for` ループを使う。科学者によるとロケットの高さは 26 ブロックだ。
+コード全体をまとめるために、エージェントの上にある各ブロックをチェックする `for` ループを使いましょう。科学者によるとロケットの高さは 26 ブロックです。
 
 **「if else」文とブロックの検査を、`||loops:for||` ループで囲んでください。ループの最後で ``||agent:agent.move||`` でエージェントを「UP」（上）に 1 ブロック移動させる。エージェントがロケットの頂上に着くまで（26 回）ループするようにしてください。**
 
 ```python
 for i in range(26):
-    player.say("Looping 26 times.")
+    if ....
+    ....
+    agent.move(UP, 1)
 ```
 
 ```ghost
