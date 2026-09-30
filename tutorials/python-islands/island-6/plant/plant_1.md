@@ -109,9 +109,11 @@ namespace scientist {
 ![Cover image](https://raw.githubusercontent.com/CausewayDigital/Minecraft-EE-MakeCode/refs/heads/master/tutorials/python-islands/island-6/plant/cover.png)
 
 ## 下のブロックを調べる
-**下方向のブロックを ``||agent:agent.inspect||`` で調べ、`block` という変数に格納してください。**
+**下方向のブロックを ``||agent:agent.inspect||`` で調べ、`block` という変数に入れてください。**
 
-**次に ``||blocks:blocks.name_of_block(ID)||`` と ``||player:player.say||`` でブロック名を表示してください。**
+次に調べたブロックの名前を表示します。
+
+** ``||blocks:blocks.name_of_block(ID)||`` と ``||player:player.say||`` でブロック名を表示してください。**
 
 ```python
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
@@ -141,7 +143,11 @@ my_list = ["A", "B", "C", "D"]
 いずれも引数にブロックを取る（``||agent:agent.inspect||`` で取得できる）。
 
 ## 水分・栄養・強度を取得する
-**それぞれの関数が返す情報を格納した変数 `hydration`、`nutrition`、`strength` を作成してください。**
+**調べたブロックについて、3つの変数を作成してください。**
+
+- `hydration`変数：植物の水分量を入れる
+- `nutrition`変数：植物の栄養価を入れる
+- `strength`変数 ：植物の強度を入れる
 
 ```python
 block = agent.inspect(AgentInspection.BLOCK, DOWN)
@@ -153,9 +159,9 @@ strength = scientist.get_strength(block)
 ```
 
 ## 植物の情報
-**`block`、`hydration`、`nutrition`、`strength` をこの順で含むリストを作り、``||scientist:scientist.submit||`` で科学者の結果と照合してください。**
+**`block`、`hydration`、`nutrition`、`strength` をこの順で含むリストを作り、``||scientist:scientist.submit||`` を使って科学者の結果と照合してください。**
 
-最初の植物の正しい情報が得られたら、他の 2 つもチェックするために使ってください。エージェントは自動的に移動する。
+最初の植物の正しい情報が得られたら、他の2つもチェックするために使ってください。エージェントは自動的に移動します。
 
 ```python
 plant_info = [...]
