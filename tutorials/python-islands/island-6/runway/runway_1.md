@@ -128,7 +128,20 @@ for row in runway_design:
 
 ## タスク 4
 
-**``||agent:agent.move||`` を 2 つ追加してください。1 つはブロックを置いた後にエージェントを `RIGHT`（右）に移動させる。もう 1 つは 2 つ目のループが終わった後にエージェントを `FORWARD`（前）に移動させる。その後、2 つ目の ``||agent:agent.move||`` の下に ``||agent:agent.return_agent||`` を追加してください。**
+**``||agent:agent.move||`` を 2 つ追加してください。1 つはブロックを置いた後にエージェントを `RIGHT`（右）に移動させる。もう 1 つは 内側のループが終わった後にエージェントを `FORWARD`（前）に移動させる。その後、2 つ目の ``||agent:agent.move||`` の下に ``||agent:agent.return_agent||`` を追加してください。**
+
+
+```python
+for row in runway_design:
+    for block in row:
+        if block:
+            agent.set_slot(1)
+            agent.place(DOWN)
+        agent.move(RIGHT, 1)
+    agent.move(FORWARD, 1)
+    agent.return_agent()
+```
+
 
 ```ghost
 for i in range(4):
