@@ -65,7 +65,7 @@ namespace agent {
 
 ```template
 
-// この行の上にコードを書いてください
+# この行の上にコードを書いてください
 telescope.start_building()
 ```
 
